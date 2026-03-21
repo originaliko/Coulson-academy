@@ -6,6 +6,7 @@ export function initCharacters(stats) {
 
   el.innerHTML = `
     <h2>Who Speaks The Most</h2>
+    <p class="section-note">Based on transcripts from seasons 1–5. Seasons 6–7 dialogue data not yet available.</p>
     <div class="toggle-wrap">
       <div class="toggle-bar">
         <button class="toggle-btn active" data-mode="global">Total lines</button>

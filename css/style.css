@@ -45,6 +45,13 @@ h1 {
 }
 h1 em { color: var(--blood); font-style: normal; display: block; }
 
+.section-note {
+  font-size: 12px;
+  color: var(--ghost);
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
 h2 {
   font-family: 'Space Mono', monospace;
   font-size: 1.5rem;
@@ -246,6 +253,7 @@ section {
   font-size: 13px;
   border-radius: 2px;
   margin-left: 8px;
+  max-width: 386px;
 }
 
 .dot-grid {

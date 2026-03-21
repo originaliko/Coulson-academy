@@ -6,7 +6,7 @@ import os
 
 load_dotenv()
 API_KEY = os.getenv("OMDB_API_KEY")
-SERIES = "Buffy the Vampire Slayer"
+SERIES = "Marvel's Agents of S.H.I.E.L.D"
 
 TOTAL_SEASONS = 7
 EPISODES_PER_SEASON = {
@@ -15,8 +15,8 @@ EPISODES_PER_SEASON = {
     3: 22,
     4: 22,
     5: 22,
-    6: 22,
-    7: 22
+    6: 13,
+    7: 13
 }
 
 episodes = []
@@ -62,8 +62,8 @@ output = {
     "episodes": episodes
 }
 
-with open("../dataset/episodes_data/buffy_episodes.json", "w", encoding="utf-8") as f:
+with open("../dataset/episodes_data/aos_omdb_episodes.json", "w", encoding="utf-8") as f:
     json.dump(output, f, indent=2, ensure_ascii=False)
 
-print("JSON file created: episodes_data/buffy_episodes.json")
+print("JSON file created: episodes_data/aos_omdb_episodes.json")
 

@@ -29,8 +29,11 @@ SECONDARY_CHARACTERS = {
     "Coulson's Dad": ["Robert", "ROBERT"],
     "Lincoln":     ["Lincoln", "LINCOLN", "Lincoln Campbell"],
     "Hive":        ["Hive", "HIVE", "Ward/Hive"],
-    "Robbie":      ["Robbie", "ROBBIE", "Ghost Rider"],
+    "Robbie":      ["Robbie", "ROBBIE", "Ghost Rider", "Reyes", "REYES", "Robbie Reyes"],
     "Aida":        ["Aida", "AIDA"],
+    "Peterson":    ["Peterson", "PETERSON", "Mike", "MIKE", "Mike Peterson", "Deathlok", "DEATHLOK"],
+    "Calvin":      ["Calvin", "CALVIN", "Cal", "CAL", "Zabo", "ZABO", "Calvin Zabo", "Mr. Hyde"],
+    "Jiaying":     ["Jiaying", "JIAYING"],
 }
 
 SECONDARY_ALIAS_MAP = {}
