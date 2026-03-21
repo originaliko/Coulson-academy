@@ -1,27 +1,41 @@
-# Buffy the Vampire Slayer — Data & Dialogue
+# Coulson Academy — Agents of S.H.I.E.L.D. Data & Dialogue
 
-A few days ago I built a simple page to search any word or sentence across all 144 episodes of the 90s TV show *Buffy the Vampire Slayer*. Then serendipity made me stumble upon [sheets.works/data-viz/friends](https://sheets.works/data-viz/friends), which does the same thing plus a wealth of data visualisations about characters and ratings.
+An interactive data visualisation site for Marvel's *Agents of S.H.I.E.L.D.* (7 seasons, 2013–2020).
 
-So I made a second version inspired by it. This is it — the dialogue search is still there, with a few extra bells and whistles.
-
-**[→ Live site](https://originaliko.github.io/Buffy-Search/)**
+**[→ Live site](https://originaliko.github.io/Coulson-academy/)**
 
 ---
 
 ## What's inside
 
 - **Hero stats** — total lines, episodes, peak IMDb rating, top speaker
-- **Who Speaks Most** — bar chart for all 13 main characters, toggle between total lines and per-episode average
-- **Episode Explorer** — dot grid where each dot is one line of dialogue, browse by season and episode
-- **IMDb Ratings** — scatter plot of all 144 episodes coloured by season
-- **Catchphrases & Keywords** — how often iconic words appear across 7 seasons
+- **Who Speaks Most** — bar chart for all 12 main characters
+- **Episode Explorer** — dot grid where each dot is one line of dialogue
+- **IMDb Ratings** — scatter plot of all 136 episodes coloured by season
+- **Catchphrases & Keywords** — how often iconic phrases appear across the series
 - **First & Last Lines** — how each character entered and exited the story
+- **Color Palettes** — dominant colors of each episode (season 1 available)
 - **Dialogue Search** — full-text search with season and character filters
 
 ---
 
-## Credits
+## Data sources
 
-- Transcript and timecode data: [jfreedland/Timestamp-Audio-in-Buffy-the-Vampire-Slayer](https://github.com/jfreedland/Timestamp-Audio-in-Buffy-the-Vampire-Slayer)
-- Episode ratings: [TVMaze](https://www.tvmaze.com/shows/427/buffy-the-vampire-slayer)
+- Transcript data: fan-sourced AoS episode scripts (seasons 1–5)
+- Episode ratings: IMDb via TMDB
 - Inspired by: [Friends Viz](https://sheets.works/data-viz/friends)
+
+---
+
+## Running locally
+
+```bash
+# Generate stats and dialogues JSON
+python scripts/build_data.py
+
+# Generate palette stats (requires palettes/all_palettes.json)
+python scripts/build_palette_stats.py
+
+# Serve locally
+python -m http.server 8000
+```

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://originaliko.github.io/Buffy-Search/sitemap.xml
+Sitemap: https://originaliko.github.io/Coulson-academy/sitemap.xml
