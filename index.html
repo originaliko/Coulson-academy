@@ -3,154 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="img/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="img/android-chrome-512x512.png">
-  <title>Buffy the Vampire Slayer — Data & Dialogue</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <title>Agents of S.H.I.E.L.D. — Data & Dialogue</title>
 
   <!-- ── SEO ──────────────────────────────────────────────────────────────── -->
-  <meta name="description" content="An interactive data visualisation of all 144 episodes of Buffy the Vampire Slayer — 116,174 lines of dialogue, IMDb ratings, character speech patterns, episode colour palettes, and more.">
+  <meta name="description" content="An interactive data visualisation of all 136 episodes of Marvel's Agents of S.H.I.E.L.D. — dialogue, IMDb ratings, character speech patterns, episode colour palettes, and more.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://originaliko.github.io/Buffy-Search">
+  <link rel="canonical" href="https://originaliko.github.io/Coulson-academy">
 
   <!-- ── Open Graph (social sharing) ─────────────────────────────────────── -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://originaliko.github.io/Buffy-Search">
-  <meta property="og:title"       content="Buffy the Vampire Slayer — Data & Dialogue">
-  <meta property="og:description" content="Interactive data visualisation of all 144 episodes — 116,174 lines of dialogue, ratings, character stats, colour palettes and more.">
-  <meta property="og:image"       content="https://originaliko.github.io/Buffy-Search/img/android-chrome-512x512.png">
+  <meta property="og:url"         content="https://originaliko.github.io/Coulson-academy">
+  <meta property="og:title"       content="Agents of S.H.I.E.L.D. — Data & Dialogue">
+  <meta property="og:description" content="Interactive data visualisation of all 136 episodes — dialogue, ratings, character stats, colour palettes and more.">
+  <meta property="og:image"       content="https://originaliko.github.io/Coulson-academy/img/favicon.svg">
   <meta property="og:locale"      content="en_US">
 
   <!-- ── Twitter / X Card ─────────────────────────────────────────────────── -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Buffy the Vampire Slayer — Data & Dialogue">
-  <meta name="twitter:description" content="Interactive data visualisation of all 144 episodes — 116,174 lines of dialogue, ratings, character stats, colour palettes and more.">
-  <meta name="twitter:image"       content="https://originaliko.github.io/Buffy-Search/img/android-chrome-512x512.png">
+  <meta name="twitter:title"       content="Agents of S.H.I.E.L.D. — Data & Dialogue">
+  <meta name="twitter:description" content="Interactive data visualisation of all 136 episodes — dialogue, ratings, character stats, colour palettes and more.">
+  <meta name="twitter:image"       content="https://originaliko.github.io/Coulson-academy/img/favicon.svg">
 
   <!-- ── Performance hints ────────────────────────────────────────────────── -->
   <link rel="preload" href="data/stats.json" as="fetch" crossorigin="anonymous">
 
   <!-- ── Structured Data (JSON-LD) ────────────────────────────────────────── -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://originaliko.github.io/Buffy-Search",
-        "url": "https://originaliko.github.io/Buffy-Search",
-        "name": "Buffy the Vampire Slayer — Data & Dialogue",
-        "description": "Interactive data visualisation of all 144 episodes of Buffy the Vampire Slayer — 116,174 lines of dialogue, IMDb ratings, character speech patterns, episode colour palettes, catchphrase frequencies and more.",
-        "inLanguage": "en",
-        "about": { "@id": "https://originaliko.github.io/Buffy-Search/#show" }
-      },
-      {
-        "@type": "TVSeries",
-        "@id": "https://originaliko.github.io/Buffy-Search/#show",
-        "name": "Buffy the Vampire Slayer",
-        "alternateName": ["Buffy", "BtVS"],
-        "numberOfEpisodes": 144,
-        "numberOfSeasons": 7,
-        "startDate": "1997-03-10",
-        "endDate": "2003-05-20",
-        "genre": ["Fantasy", "Horror", "Drama", "Action"],
-        "creator": { "@type": "Person", "name": "Joss Whedon" },
-        "actor": [
-          { "@type": "Person", "name": "Sarah Michelle Gellar",  "characterName": "Buffy Summers" },
-          { "@type": "Person", "name": "Nicholas Brendon",       "characterName": "Xander Harris" },
-          { "@type": "Person", "name": "Alyson Hannigan",        "characterName": "Willow Rosenberg" },
-          { "@type": "Person", "name": "Anthony Stewart Head",   "characterName": "Rupert Giles" },
-          { "@type": "Person", "name": "James Marsters",         "characterName": "Spike" },
-          { "@type": "Person", "name": "David Boreanaz",         "characterName": "Angel" },
-          { "@type": "Person", "name": "Emma Caulfield",         "characterName": "Anya Jenkins" },
-          { "@type": "Person", "name": "Charisma Carpenter",     "characterName": "Cordelia Chase" },
-          { "@type": "Person", "name": "Eliza Dushku",           "characterName": "Faith Lehane" },
-          { "@type": "Person", "name": "Michelle Trachtenberg",  "characterName": "Dawn Summers" }
-        ]
-      },
-      {
-        "@type": "Dataset",
-        "@id": "https://originaliko.github.io/Buffy-Search/#dataset",
-        "name": "Buffy the Vampire Slayer — Complete Dialogue & Episode Dataset",
-        "description": "Complete dialogue transcript data for all 144 episodes of Buffy the Vampire Slayer (1997–2003), including 116,174 timestamped lines of dialogue, episode ratings, character speech statistics, and catchphrase frequencies.",
-        "url": "https://originaliko.github.io/Buffy-Search/",
-        "isBasedOn": "https://github.com/jfreedland/Timestamp-Audio-in-Buffy-the-Vampire-Slayer",
-        "license": "https://creativecommons.org/licenses/by/4.0/",
-        "variableMeasured": [
-          "Dialogue lines per character",
-          "Episode IMDb ratings",
-          "Character first and last lines",
-          "Catchphrase frequencies",
-          "Episode colour palettes"
-        ],
-        "temporalCoverage": "1997/2003",
-        "measurementTechnique": "Automated transcript parsing and aggregation"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How many lines of dialogue does Buffy the Vampire Slayer have in total?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Buffy the Vampire Slayer has 116,174 total lines of dialogue across all 144 episodes and 7 seasons." }
-          },
-          {
-            "@type": "Question",
-            "name": "How many lines does Buffy Summers speak across the series?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Buffy Summers (played by Sarah Michelle Gellar) speaks 24,895 lines of dialogue, making her the most spoken character in the series." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the highest rated episode of Buffy the Vampire Slayer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The highest rated episode of Buffy the Vampire Slayer is Hush (Season 4, Episode 10) with an IMDb rating of 9.3 out of 10." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the lowest rated episode of Buffy the Vampire Slayer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The lowest rated episode of Buffy the Vampire Slayer is Dead Things (Season 6, Episode 13) with an IMDb rating of 6.1 out of 10." }
-          },
-          {
-            "@type": "Question",
-            "name": "How many episodes of Buffy the Vampire Slayer are there?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Buffy the Vampire Slayer has 144 episodes spread across 7 seasons, which aired from 1997 to 2003." }
-          },
-          {
-            "@type": "Question",
-            "name": "What episode does Spike first appear in Buffy the Vampire Slayer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Spike (played by James Marsters) first appears in Season 2, Episode 3, titled School Hard." }
-          },
-          {
-            "@type": "Question",
-            "name": "What episode does Faith first appear in Buffy the Vampire Slayer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Faith (played by Eliza Dushku) first appears in Season 3, Episode 3, titled Faith, Hope & Trick." }
-          },
-          {
-            "@type": "Question",
-            "name": "What episode does Anya first appear in Buffy the Vampire Slayer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Anya (played by Emma Caulfield) first appears in Season 3, Episode 9, titled The Wish." }
-          },
-          {
-            "@type": "Question",
-            "name": "Who speaks the most in Buffy the Vampire Slayer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Buffy Summers is the most spoken character in Buffy the Vampire Slayer with 24,895 lines of dialogue across the series." }
-          },
-          {
-            "@type": "Question",
-            "name": "How many seasons of Buffy the Vampire Slayer are there?",
-            "acceptedAnswer": { "@type": "Answer", "text": "There are 7 seasons of Buffy the Vampire Slayer, which originally aired on The WB (seasons 1–5) and UPN (seasons 6–7) from 1997 to 2003." }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://originaliko.github.io/Coulson-academy",
+      "url": "https://originaliko.github.io/Coulson-academy",
+      "name": "Agents of S.H.I.E.L.D. — Data & Dialogue",
+      "description": "Interactive data visualisation of all 136 episodes of Marvel's Agents of S.H.I.E.L.D. — dialogue, ratings, character stats, colour palettes and more.",
+      "inLanguage": "en",
+      "about": { "@id": "https://originaliko.github.io/Coulson-academy/#show" }
+    },
+    {
+      "@type": "TVSeries",
+      "@id": "https://originaliko.github.io/Coulson-academy/#show",
+      "name": "Marvel's Agents of S.H.I.E.L.D.",
+      "alternateName": ["Agents of SHIELD", "AoS"],
+      "numberOfEpisodes": 136,
+      "numberOfSeasons": 7,
+      "startDate": "2013-09-24",
+      "endDate": "2020-08-13",
+      "genre": ["Action", "Adventure", "Science-Fiction"],
+      "creator": { "@type": "Organization", "name": "ABC Studios / Marvel Television" },
+      "actor": [
+        { "@type": "Person", "name": "Clark Gregg",          "characterName": "Phil Coulson" },
+        { "@type": "Person", "name": "Ming-Na Wen",          "characterName": "Melinda May" },
+        { "@type": "Person", "name": "Chloe Bennet",         "characterName": "Daisy Johnson" },
+        { "@type": "Person", "name": "Iain De Caestecker",   "characterName": "Leo Fitz" },
+        { "@type": "Person", "name": "Elizabeth Henstridge", "characterName": "Jemma Simmons" },
+        { "@type": "Person", "name": "Brett Dalton",         "characterName": "Grant Ward" },
+        { "@type": "Person", "name": "Henry Simmons",        "characterName": "Alphonso Mackenzie" }
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://originaliko.github.io/Coulson-academy/#dataset",
+      "name": "Marvel's Agents of S.H.I.E.L.D. — Complete Dialogue Dataset",
+      "description": "Dialogue transcript data for seasons 1–5 of Marvel's Agents of S.H.I.E.L.D., including character speech statistics and episode ratings for all 7 seasons.",
+      "url": "https://originaliko.github.io/Coulson-academy/",
+      "license": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ]
+}
+</script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Space+Mono:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <!-- Chart.js from CDN — used by ratings.js and catchphrases.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -171,28 +96,17 @@
 
   <!-- Floating search button -->
   <button class="search-float" onclick="document.getElementById('search').scrollIntoView({behavior:'smooth'})">
-    ⚔ Search Dialogue
-  </button>
+  ◈ Search Dialogue
+</button>
 
   <!-- Static facts for crawlers that do not execute JavaScript -->
   <noscript>
-    <div style="max-width:960px;margin:0 auto;padding:40px 24px;font-family:sans-serif;color:#E8E0D5;background:#0D0D0F">
-      <h1>Buffy the Vampire Slayer — Data &amp; Dialogue</h1>
-      <p>An interactive data visualisation of all 144 episodes across 7 seasons (1997–2003).</p>
-      <h2>Key facts</h2>
-      <ul>
-        <li>116,174 total lines of dialogue</li>
-        <li>144 episodes across 7 seasons</li>
-        <li>Buffy Summers speaks the most lines: 24,895</li>
-        <li>Highest rated episode: Hush (S4E10) — 9.3★ on IMDb</li>
-        <li>Lowest rated episode: Dead Things (S6E13) — 6.1★ on IMDb</li>
-        <li>Spike first appears in S2E3 — School Hard</li>
-        <li>Faith first appears in S3E3 — Faith, Hope &amp; Trick</li>
-        <li>Anya first appears in S3E9 — The Wish</li>
-      </ul>
-      <p>Please enable JavaScript to use the interactive features.</p>
-    </div>
-  </noscript>
+  <div style="max-width:960px;margin:0 auto;padding:40px 24px;font-family:sans-serif;color:#d0e8f0;background:#050d10">
+    <h1>Agents of S.H.I.E.L.D. — Data &amp; Dialogue</h1>
+    <p>An interactive data visualisation of all 136 episodes across 7 seasons (2013–2020).</p>
+    <p>Please enable JavaScript to use the interactive features.</p>
+  </div>
+</noscript>
 
   <main>
     <section id="hero"><!-- populated by hero.js --></section>
@@ -206,12 +120,10 @@
   </main>
 
   <footer class="site-footer">
-    <p>Transcript data: <a href="https://github.com/jfreedland/Timestamp-Audio-in-Buffy-the-Vampire-Slayer" target="_blank" rel="noopener">jfreedland/Timestamp-Audio-in-Buffy-the-Vampire-Slayer</a></p>
-    <p>Episode ratings: <a href="https://www.tvmaze.com/shows/427/buffy-the-vampire-slayer" target="_blank" rel="noopener">TVMaze</a></p>
-    <p>Inspired by : <a href="https://sheets.works/data-viz/friends" target="_blank" rel="noopener">Friends Viz</a></p>
-    <p>Made by : <a href="https://github.com/originaliko" target="_blank" rel=""noopener"><span class="iko">Originaliko &nbsp;<svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" class="octicon octicon-mark-github">
-    <path d="M10.303 16.652c-2.837-.344-4.835-2.385-4.835-5.028 0-1.074.387-2.235 1.031-3.008-.279-.709-.236-2.214.086-2.837.86-.107 2.02.344 2.708.967.816-.258 1.676-.386 2.728-.386 1.053 0 1.913.128 2.686.365.666-.602 1.848-1.053 2.708-.946.3.581.344 2.085.064 2.815.688.817 1.053 1.913 1.053 3.03 0 2.643-1.998 4.641-4.877 5.006.73.473 1.224 1.504 1.224 2.686v2.235c0 .644.537 1.01 1.182.752 3.889-1.483 6.94-5.372 6.94-10.185 0-6.081-4.942-11.044-11.022-11.044-6.081 0-10.98 4.963-10.98 11.044a10.84 10.84 0 0 0 7.112 10.206c.58.215 1.139-.172 1.139-.752v-1.719a2.768 2.768 0 0 1-1.032.215c-1.418 0-2.256-.773-2.857-2.213-.237-.58-.495-.924-.989-.988-.258-.022-.344-.129-.344-.258 0-.258.43-.451.86-.451.623 0 1.16.386 1.719 1.181.43.623.881.903 1.418.903.537 0 .881-.194 1.375-.688.365-.365.645-.687.903-.902Z"></path>
-</svg></span> – Version 2.5.1</a></p>
+    <p>Transcript data: fan-sourced AoS episode scripts</p>
+    <p>Episode ratings: <a href="https://www.imdb.com/title/tt2364582/" target="_blank" rel="noopener">IMDb</a></p>
+    <p>Inspired by: <a href="https://sheets.works/data-viz/friends" target="_blank" rel="noopener">Friends Viz</a></p>
+    <p>Made by: <a href="https://github.com/originaliko" target="_blank" rel="noopener"><span class="iko">Originaliko — Version 1.0.0</span></a></p>
   </footer>
 
   <script type="module" src="js/main.js"></script>
