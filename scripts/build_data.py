@@ -126,6 +126,8 @@ def load_episode_meta(root):
 
     with open(ratings_path, encoding="utf-8") as f:
         ratings_raw = json.load(f)
+    if not ratings_raw:
+        raise ValueError(f"Unexpected empty ratings JSON: {ratings_path}")
     with open(details_path, encoding="utf-8") as f:
         details_raw = json.load(f)
 
@@ -143,7 +145,7 @@ def load_episode_meta(root):
     for ep in details_raw["tvShow"]["episodes"]:
         key = (ep["season"], ep["episode"])
         ep_id = f"s{ep['season']:02d}e{ep['episode']:02d}"
-        air_date = ep["air_date"].split(" ")[0]  # strip time component
+        air_date = (ep.get("air_date") or "")[:10]  # strip time component
         rating_data = ratings_map.get(key, {})
         episode_meta[ep_id] = {
             "id":       ep_id,
@@ -172,7 +174,7 @@ def read_txt_rows(filepath):
 
 def accumulate_episode(rows, ep_id, alias_map, stats):
     stats["dialogues"].setdefault(ep_id, [])
-    stats["ep_line_count"][ep_id] = 0
+    stats["ep_line_count"].setdefault(ep_id, 0)
     stats["ep_top_speaker"].setdefault(ep_id, {})
 
     for row in rows:
@@ -288,7 +290,7 @@ def build_stats_json(stats, episode_meta):
         "meta": {
             "total_lines":    total_lines,
             "total_episodes": len(episode_meta),
-            "total_seasons":  7,
+            "total_seasons":  len(set(e["season"] for e in episode_meta.values())),
             "peak_rating":    {"value": peak.get("rating"), "episode": peak["id"], "title": peak["title"]},
             "lowest_rating":  {"value": lowest.get("rating"), "episode": lowest["id"], "title": lowest["title"]},
             "top_speaker":    {"character": top_speaker_name, "lines": stats["char_lines"].get(top_speaker_name, 0)},

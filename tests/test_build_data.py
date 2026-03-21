@@ -46,3 +46,7 @@ def test_episode_id_season5_ep22():
 def test_episode_id_invalid_raises():
     with pytest.raises(ValueError):
         episode_id_from_path("dataset/transcripts/no_season_here/E01.txt")
+
+def test_episode_id_no_episode_number_raises():
+    with pytest.raises(ValueError):
+        episode_id_from_path("dataset/transcripts/Season 1/notanep.txt")
