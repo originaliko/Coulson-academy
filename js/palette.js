@@ -23,6 +23,9 @@ export function initPalette(stats) {
     </div>
     <div class="palette-wrap">
       <img class="palette-img" id="palette-img" alt="Episode color palette" loading="lazy">
+      <div id="palette-placeholder" class="palette-placeholder" style="display:none">
+        Color palette coming soon — screenshots not yet available for this season.
+      </div>
       <div class="palette-ep-label" id="palette-ep-label"></div>
       <div class="palette-stats-bar" id="palette-stats-bar"></div>
     </div>
@@ -172,7 +175,17 @@ export function initPalette(stats) {
     currentEpId = epId;
     const ep = epMap[epId];
     if (!ep) return;
-    img.src = `palettes/buffy-${epId}-palette.png`;
+    img.src = `palettes/aos-${epId}-palette.png`;
+    img.onerror = () => {
+      img.style.display = 'none';
+      const placeholder = document.getElementById('palette-placeholder');
+      if (placeholder) placeholder.style.display = 'block';
+    };
+    img.onload = () => {
+      img.style.display = '';
+      const placeholder = document.getElementById('palette-placeholder');
+      if (placeholder) placeholder.style.display = 'none';
+    };
     img.alt = `${ep.title} colour palette`;
     epLabel.textContent = `S${ep.season}E${String(ep.episode).padStart(2, '0')} — ${ep.title}`;
     if (paletteStats) {
