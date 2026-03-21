@@ -1,38 +1,36 @@
-import csv, json, glob, re, os
+import json, glob, re, os
+from pathlib import Path
 
-# ── CONFIG ──────────────────────────────────────────────────────────────────
+# ── CONFIG ────────────────────────────────────────────────────────────────────
 
 OTHER_COLOR = "#444444"
 
 CHARACTERS = {
-    "Buffy":    {"color": "#C8251A", "aliases": ["BUFFY", "Buffy Summers", "buffy"]},
-    "Willow":   {"color": "#C8860A", "aliases": ["WILLOW", "Willow Rosenberg"]},
-    "Xander":   {"color": "#4A90D9", "aliases": ["XANDER", "Xander Harris"]},
-    "Giles":    {"color": "#7B5EA7", "aliases": ["GILES", "Rupert Giles"]},
-    "Spike":    {"color": "#E8D5A3", "aliases": ["SPIKE", "William"]},
-    "Angel":    {"color": "#2C6E49", "aliases": ["ANGEL", "Angelus"]},
-    "Anya":     {"color": "#D4847A", "aliases": ["ANYA", "Anyanka", "Anya Jenkins"]},
-    "Tara":     {"color": "#7EB5A6", "aliases": ["TARA", "Tara Maclay"]},
-    "Cordelia": {"color": "#C9A84C", "aliases": ["CORDELIA", "Cordelia Chase"]},
-    "Dawn":     {"color": "#6B9BD2", "aliases": ["DAWN", "Dawn Summers"]},
-    "Joyce":    {"color": "#A67C52", "aliases": ["JOYCE", "Joyce Summers"]},
-    "Faith":    {"color": "#B5451B", "aliases": ["FAITH", "Faith Lehane"]},
-    "Riley":    {"color": "#5C7A5C", "aliases": ["RILEY", "Riley Finn"]},
+    "Coulson":  {"color": "#c9a87c", "aliases": ["COULSON", "Phil Coulson", "Director Coulson", "Phil"]},
+    "May":      {"color": "#e05c2a", "aliases": ["MAY", "Melinda May", "Melinda"]},
+    "Daisy":    {"color": "#38bdf8", "aliases": ["DAISY", "SKYE", "Skye", "Quake", "Daisy Johnson"]},
+    "Fitz":     {"color": "#3b9ef5", "aliases": ["FITZ", "Leo Fitz", "Leo"]},
+    "Simmons":  {"color": "#34d399", "aliases": ["SIMMONS", "Jemma Simmons", "Jemma"]},
+    "Ward":     {"color": "#64748b", "aliases": ["WARD", "Grant Ward", "Grant"]},
+    "Mack":     {"color": "#d4a843", "aliases": ["MACK", "Alphonso Mackenzie", "Mackenzie", "Alphonso"]},
+    "Hunter":   {"color": "#f97316", "aliases": ["HUNTER", "Lance Hunter", "Lance"]},
+    "Bobbi":    {"color": "#e879a0", "aliases": ["BOBBI", "Bobbi Morse", "Mockingbird"]},
+    "Yo-Yo":    {"color": "#fb923c", "aliases": ["YO-YO", "Elena Rodriguez", "ELENA", "Elena"]},
+    "Deke":     {"color": "#94a3b8", "aliases": ["DEKE", "Deke Shaw"]},
+    "Triplett": {"color": "#4ade80", "aliases": ["TRIP", "TRIPLETT", "Antoine Triplett", "Antoine"]},
 }
 
-# Secondary characters: tracked for first appearance only (no color, no stats)
-# Keys are display names; values are raw transcript name variants to match.
 SECONDARY_CHARACTERS = {
-    "Harmony":       ["Harmony", "HARMONY"],
-    "Amy":           ["Amy", "AMY"],
-    "Jenny Calendar":["Ms. Calendar", "Jenny", "Jenny Calendar"],
-    "Snyder":        ["Snyder", "SNYDER", "Principal Snyder"],
-    "Drusilla":      ["Drusilla", "DRUSILLA"],
-    "Jonathan":      ["Jonathan", "JONATHAN"],
-    "Wesley":        ["Wesley", "WESLEY"],
-    "Warren":        ["WARREN", "Warren"],
-    "Andrew":        ["ANDREW", "Andrew"],
-    "Robin Wood":    ["PRINCIPAL WOOD", "ROBIN WOOD", "Robin Wood"],
+    "Hill":        ["Hill", "Maria Hill", "HILL"],
+    "Fury":        ["Fury", "Nick Fury", "FURY"],
+    "Garrett":     ["Garrett", "GARRETT", "John Garrett"],
+    "Raina":       ["Raina", "RAINA"],
+    "Talbot":      ["Talbot", "TALBOT", "General Talbot"],
+    "Coulson's Dad": ["Robert", "ROBERT"],
+    "Lincoln":     ["Lincoln", "LINCOLN", "Lincoln Campbell"],
+    "Hive":        ["Hive", "HIVE", "Ward/Hive"],
+    "Robbie":      ["Robbie", "ROBBIE", "Ghost Rider"],
+    "Aida":        ["Aida", "AIDA"],
 }
 
 SECONDARY_ALIAS_MAP = {}
@@ -41,11 +39,19 @@ for _canonical, _aliases in SECONDARY_CHARACTERS.items():
         SECONDARY_ALIAS_MAP[_alias.lower()] = _canonical
 
 CATCHPHRASES = [
-    "I'm buffy", "Vampire", "Slayer", "Hellmouth", "Chosen One", "Watcher",
-    "Bloody hell", "Bored now", "Five by five"
+    "Hail Hydra",
+    "S.H.I.E.L.D.",
+    "Level 7",
+    "The Bus",
+    "Quake",
+    "It's a magical place",
+    "If I need a gun",
+    "lanyards",
+    "The cavalry",
+    "The destroyer",
 ]
 
-# ── DERIVED LOOKUP ───────────────────────────────────────────────────────────
+# ── DERIVED LOOKUP ────────────────────────────────────────────────────────────
 
 ALIAS_MAP = {}
 for canonical, info in CHARACTERS.items():
@@ -54,67 +60,124 @@ for canonical, info in CHARACTERS.items():
         ALIAS_MAP[alias.lower()] = canonical
 
 
-# ── HELPERS ──────────────────────────────────────────────────────────────────
+# ── HELPERS ───────────────────────────────────────────────────────────────────
+
+def parse_txt_line(raw_line):
+    """
+    Parse 'Character: dialogue' line from AoS transcript TXT files.
+    Returns (character, dialogue) tuple, or None if line should be skipped.
+    """
+    line = raw_line.strip()
+    if not line:
+        return None
+    if line.startswith('♪'):
+        return None
+    # Split on ': ' (with space)
+    if ': ' in line:
+        char, _, dialogue = line.partition(': ')
+        return char.strip(), dialogue.strip()
+    # Fall back to ':' alone (no space after colon)
+    if ':' in line:
+        char, _, dialogue = line.partition(':')
+        return char.strip(), dialogue.strip()
+    # No colon at all — skip with warning
+    print(f"  WARN: skipping line with no colon: {line[:80]}")
+    return None
+
+
+def episode_id_from_path(filepath):
+    """
+    Derive episode ID from transcript path.
+    'dataset/transcripts/Season 1/E01 - Pilot.txt' -> 's01e01'
+    """
+    parts = Path(filepath).parts
+    season_dir = next(
+        (p for p in parts if re.match(r'Season\s+\d+', p, re.IGNORECASE)), None
+    )
+    if not season_dir:
+        raise ValueError(f"Cannot find 'Season X' directory in: {filepath}")
+    season_num = int(re.search(r'\d+', season_dir).group())
+    filename = Path(filepath).name
+    ep_match = re.match(r'E(\d+)', filename, re.IGNORECASE)
+    if not ep_match:
+        raise ValueError(f"Cannot find episode number in filename: {filename}")
+    ep_num = int(ep_match.group(1))
+    return f"s{season_num:02d}e{ep_num:02d}"
+
 
 def normalize_character(raw, alias_map):
-    """Return canonical character name, or raw value if unknown."""
     if not raw:
         return raw
     return alias_map.get(raw.strip().lower(), raw.strip())
 
 
-def episode_id_from_filename(filename):
-    """'S01E01_script.csv' -> 's01e01'"""
-    base = os.path.basename(filename)
-    match = re.match(r'(S\d+E\d+)', base, re.IGNORECASE)
-    if not match:
-        raise ValueError(f"Cannot derive episode id from: {filename}")
-    return match.group(1).lower()
-
-
-def read_csv_rows(filepath):
-    """Read a transcript CSV and return list of dicts with normalized fields."""
-    rows = []
-    with open(filepath, encoding="utf-8", errors="replace") as f:
-        reader = csv.reader(f)
-        for raw in reader:
-            if len(raw) < 4:
-                continue
-            try:
-                start = float(raw[0])
-                end = float(raw[1])
-            except ValueError:
-                continue
-            rows.append({
-                "start": start,
-                "end": end,
-                "character": raw[2].strip(),
-                "line": raw[3].strip(),
-            })
-    return rows
-
-
 def phrase_matches(phrase, line):
-    """Case-insensitive substring match, regex-safe."""
     return bool(re.search(re.escape(phrase), line, re.IGNORECASE))
 
 
+def load_episode_meta(root):
+    """
+    Merge episodes-ratings.json + episodes-details.json into episode_meta dict.
+    Authoritative for names: episodes-details.json.
+    Authoritative for ratings: episodes-ratings.json.
+    """
+    ratings_path = os.path.join(root, "dataset", "episodes_data", "episodes-ratings.json")
+    details_path = os.path.join(root, "dataset", "episodes_data", "episodes-details.json")
+
+    with open(ratings_path, encoding="utf-8") as f:
+        ratings_raw = json.load(f)
+    with open(details_path, encoding="utf-8") as f:
+        details_raw = json.load(f)
+
+    # Ratings map: (season_number, episode_number) -> {rating, votes}
+    ratings_map = {}
+    for ep in ratings_raw[0]["episodes"]:
+        key = (ep["season_number"], ep["episode_number"])
+        ratings_map[key] = {
+            "rating": ep.get("vote_average"),
+            "votes":  ep.get("num_votes"),
+        }
+
+    # Build episode_meta from details (authoritative for names + air_date)
+    episode_meta = {}
+    for ep in details_raw["tvShow"]["episodes"]:
+        key = (ep["season"], ep["episode"])
+        ep_id = f"s{ep['season']:02d}e{ep['episode']:02d}"
+        air_date = ep["air_date"].split(" ")[0]  # strip time component
+        rating_data = ratings_map.get(key, {})
+        episode_meta[ep_id] = {
+            "id":       ep_id,
+            "season":   ep["season"],
+            "episode":  ep["episode"],
+            "title":    ep["name"],
+            "air_date": air_date,
+            "rating":   rating_data.get("rating"),
+            "votes":    rating_data.get("votes"),
+        }
+    return episode_meta
+
+
+def read_txt_rows(filepath):
+    """Read a TXT transcript and return list of {character, line} dicts."""
+    rows = []
+    with open(filepath, encoding="utf-8", errors="replace") as f:
+        for raw in f:
+            result = parse_txt_line(raw)
+            if result is None:
+                continue
+            char, dialogue = result
+            rows.append({"character": char, "line": dialogue})
+    return rows
+
+
 def accumulate_episode(rows, ep_id, alias_map, stats):
-    """
-    Process rows for one episode and accumulate into stats dict.
-    """
     stats["dialogues"].setdefault(ep_id, [])
     stats["ep_line_count"][ep_id] = 0
     stats["ep_top_speaker"].setdefault(ep_id, {})
 
     for row in rows:
         canonical = normalize_character(row["character"], alias_map)
-        entry = {
-            "start": row["start"],
-            "end": row["end"],
-            "character": canonical,
-            "line": row["line"],
-        }
+        entry = {"character": canonical, "line": row["line"]}
         stats["dialogues"][ep_id].append(entry)
 
         if canonical:
@@ -146,51 +209,51 @@ def accumulate_episode(rows, ep_id, alias_map, stats):
 
 
 def build_stats_json(stats, episode_meta):
-    """Assemble the stats.json structure from accumulated stats."""
     total_lines = sum(stats["ep_line_count"].values())
-    peak = max(episode_meta.values(), key=lambda e: e.get("rating") or 0)
-    lowest = min(episode_meta.values(), key=lambda e: e.get("rating") or 9999)
+    rated = [e for e in episode_meta.values() if e.get("rating")]
+    peak   = max(rated, key=lambda e: e["rating"]) if rated else list(episode_meta.values())[0]
+    lowest = min(rated, key=lambda e: e["rating"]) if rated else list(episode_meta.values())[0]
     top_speaker_name = max(stats["char_lines"], key=stats["char_lines"].get) if stats["char_lines"] else ""
 
     characters_out = []
     for name in CHARACTERS:
-        total = stats["char_lines"].get(name, 0)
+        total    = stats["char_lines"].get(name, 0)
         appeared = len(stats["char_episodes"].get(name, set()))
         characters_out.append({
-            "name": name,
-            "color": CHARACTERS[name]["color"],
-            "total_lines": total,
-            "episodes_appeared": appeared,
+            "name":               name,
+            "color":              CHARACTERS[name]["color"],
+            "total_lines":        total,
+            "episodes_appeared":  appeared,
             "lines_per_appearance": round(total / appeared) if appeared else 0,
         })
 
     episodes_out = []
     for ep_id, meta in sorted(episode_meta.items()):
-        top_char_in_ep = ""
+        top_char = ""
         if stats["ep_top_speaker"].get(ep_id):
-            top_char_in_ep = max(stats["ep_top_speaker"][ep_id],
-                                 key=stats["ep_top_speaker"][ep_id].get)
+            top_char = max(stats["ep_top_speaker"][ep_id], key=stats["ep_top_speaker"][ep_id].get)
         episodes_out.append({
-            "id": ep_id,
-            "season": meta["season"],
-            "episode": meta["episode"],
-            "title": meta["title"],
-            "air_date": meta["air_date"],
-            "rating": meta.get("rating"),
-            "line_count": stats["ep_line_count"].get(ep_id, 0),
-            "top_speaker": top_char_in_ep,
+            "id":          ep_id,
+            "season":      meta["season"],
+            "episode":     meta["episode"],
+            "title":       meta["title"],
+            "air_date":    meta["air_date"],
+            "rating":      meta.get("rating"),
+            "votes":       meta.get("votes"),
+            "line_count":  stats["ep_line_count"].get(ep_id, 0),
+            "top_speaker": top_char,
         })
 
     catchphrases_out = []
     for phrase in CATCHPHRASES:
         by_char = stats["phrase_by_char"].get(phrase, {})
-        total = sum(by_char.values())
-        top_char = max(by_char, key=by_char.get) if by_char else ""
+        total   = sum(by_char.values())
+        top     = max(by_char, key=by_char.get) if by_char else ""
         catchphrases_out.append({
-            "phrase": phrase,
-            "total": total,
-            "top_character": top_char,
-            "by_character": dict(sorted(by_char.items(), key=lambda x: -x[1])),
+            "phrase":        phrase,
+            "total":         total,
+            "top_character": top,
+            "by_character":  dict(sorted(by_char.items(), key=lambda x: -x[1])),
         })
     catchphrases_out.sort(key=lambda x: -x["total"])
 
@@ -201,12 +264,12 @@ def build_stats_json(stats, episode_meta):
             fl = stats["char_first"][name]
             ep = episode_meta.get(fl["ep_id"], {})
             entry["first"] = {"line": fl["line"], "episode_id": fl["ep_id"],
-                              "episode_title": ep.get("title", "")}
+                               "episode_title": ep.get("title", "")}
         if name in stats["char_last"]:
             ll = stats["char_last"][name]
             ep = episode_meta.get(ll["ep_id"], {})
             entry["last"] = {"line": ll["line"], "episode_id": ll["ep_id"],
-                             "episode_title": ep.get("title", "")}
+                              "episode_title": ep.get("title", "")}
         first_last_out.append(entry)
 
     for name in SECONDARY_CHARACTERS:
@@ -223,56 +286,46 @@ def build_stats_json(stats, episode_meta):
 
     return {
         "meta": {
-            "total_lines": total_lines,
+            "total_lines":    total_lines,
             "total_episodes": len(episode_meta),
-            "total_seasons": 7,
-            "peak_rating": {"value": peak.get("rating"), "episode": peak["id"],
-                            "title": peak["title"]},
-            "lowest_rating": {"value": lowest.get("rating"), "episode": lowest["id"],
-                              "title": lowest["title"]},
-            "top_speaker": {"character": top_speaker_name,
-                            "lines": stats["char_lines"].get(top_speaker_name, 0)},
+            "total_seasons":  7,
+            "peak_rating":    {"value": peak.get("rating"), "episode": peak["id"], "title": peak["title"]},
+            "lowest_rating":  {"value": lowest.get("rating"), "episode": lowest["id"], "title": lowest["title"]},
+            "top_speaker":    {"character": top_speaker_name, "lines": stats["char_lines"].get(top_speaker_name, 0)},
         },
-        "episodes": episodes_out,
-        "characters": characters_out,
+        "episodes":    episodes_out,
+        "characters":  characters_out,
         "catchphrases": catchphrases_out,
-        "first_last": first_last_out,
+        "first_last":  first_last_out,
     }
 
 
 def main():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    csv_glob = os.path.join(root, "dataset", "transcripts", "*.csv")
-    meta_path = os.path.join(root, "dataset", "episodes_data", "buffy_episodes.json")
-    out_stats = os.path.join(root, "data", "stats.json")
+    txt_glob     = os.path.join(root, "dataset", "transcripts", "Season *", "E*.txt")
+    out_stats    = os.path.join(root, "data", "stats.json")
     out_dialogues = os.path.join(root, "data", "dialogues.json")
 
-    with open(meta_path, encoding="utf-8") as f:
-        raw_meta = json.load(f)
-    episode_meta = {ep["id"]: ep for ep in raw_meta["episodes"]}
+    episode_meta = load_episode_meta(root)
 
     stats = {
-        "dialogues": {},
-        "char_lines": {},
-        "char_episodes": {},
-        "char_first": {},
-        "char_last": {},
-        "sec_char_first": {},
-        "phrase_totals": {},
-        "phrase_by_char": {},
-        "ep_line_count": {},
-        "ep_top_speaker": {},
+        "dialogues": {}, "char_lines": {}, "char_episodes": {},
+        "char_first": {}, "char_last": {}, "sec_char_first": {},
+        "phrase_totals": {}, "phrase_by_char": {},
+        "ep_line_count": {}, "ep_top_speaker": {},
     }
 
-    csv_files = sorted(glob.glob(csv_glob))
-    for filepath in csv_files:
-        ep_id = episode_id_from_filename(filepath)
-        rows = read_csv_rows(filepath)
+    txt_files = sorted(glob.glob(txt_glob))
+    for filepath in txt_files:
+        ep_id = episode_id_from_path(filepath)
+        rows  = read_txt_rows(filepath)
         accumulate_episode(rows, ep_id, ALIAS_MAP, stats)
         print(f"  processed {ep_id} ({len(rows)} rows)")
 
+    # Ensure all episodes from metadata appear in dialogues (even those without transcripts)
     for ep_id in episode_meta:
         stats["dialogues"].setdefault(ep_id, [])
+        stats["ep_line_count"].setdefault(ep_id, 0)
 
     stats_data = build_stats_json(stats, episode_meta)
     os.makedirs(os.path.dirname(out_stats), exist_ok=True)
