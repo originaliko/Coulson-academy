@@ -14,7 +14,7 @@ CHARACTERS = {
     "Ward":     {"color": "#64748b", "aliases": ["WARD", "Grant Ward", "Grant"]},
     "Mack":     {"color": "#d4a843", "aliases": ["MACK", "Alphonso Mackenzie", "Mackenzie", "Alphonso"]},
     "Hunter":   {"color": "#f97316", "aliases": ["HUNTER", "Lance Hunter", "Lance"]},
-    "Bobbi":    {"color": "#e879a0", "aliases": ["BOBBI", "Bobbi Morse", "Mockingbird"]},
+    "Bobbi":    {"color": "#e879a0", "aliases": ["BOBBI", "Bobbi Morse", "Mockingbird", "Morse", "MORSE"]},
     "Yo-Yo":    {"color": "#fb923c", "aliases": ["YO-YO", "Elena Rodriguez", "ELENA", "Elena"]},
     "Deke":     {"color": "#94a3b8", "aliases": ["DEKE", "Deke Shaw"]},
     "Triplett": {"color": "#4ade80", "aliases": ["TRIP", "TRIPLETT", "Antoine Triplett", "Antoine"]},
@@ -40,11 +40,10 @@ for _canonical, _aliases in SECONDARY_CHARACTERS.items():
 
 CATCHPHRASES = [
     "Hail Hydra",
-    "S.H.I.E.L.D.",
+    "Agents of S.H.I.E.L.D.",
     "Level 7",
     "The Bus",
-    "Quake",
-    "It's a magical place",
+    "magical place",
     "If I need a gun",
     "lanyards",
     "The cavalry",
@@ -135,12 +134,13 @@ def load_episode_meta(root):
 
     # Ratings map: (season_number, episode_number) -> {rating, votes}
     ratings_map = {}
-    for ep in ratings_raw[0]["episodes"]:
-        key = (ep["season_number"], ep["episode_number"])
-        ratings_map[key] = {
-            "rating": ep.get("vote_average"),
-            "votes":  ep.get("num_votes"),
-        }
+    for season_data in ratings_raw:
+        for ep in season_data["episodes"]:
+            key = (ep["season_number"], ep["episode_number"])
+            ratings_map[key] = {
+                "rating": ep.get("vote_average"),
+                "votes":  ep.get("num_votes"),
+            }
 
     # Build episode_meta from details (authoritative for names + air_date)
     episode_meta = {}

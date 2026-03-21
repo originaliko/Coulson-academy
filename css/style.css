@@ -712,16 +712,19 @@ section {
 .hero-shield {
   width: 64px;
   height: 64px;
-  fill: var(--blood);
-  color: var(--blood);
+  flex-shrink: 0;
+  background-color: var(--blood);
+  -webkit-mask: url("../img/SHIELD logo.svg") no-repeat center / contain;
+  mask: url("../img/SHIELD logo.svg") no-repeat center / contain;
 }
 
 .hero-title-svg {
   height: 44px;
-  fill: var(--pale);
-  color: var(--pale);
   flex: 1;
   max-width: 512px;
+  background-color: var(--pale);
+  -webkit-mask: url("../img/Coulson academy title.svg") no-repeat left center / contain;
+  mask: url("../img/Coulson academy title.svg") no-repeat left center / contain;
 }
 
 /* ── PALETTE PLACEHOLDER ─────────────────────────────────────────────────────── */
