@@ -130,6 +130,8 @@ def load_episode_meta(root):
         raise ValueError(f"Unexpected empty ratings JSON: {ratings_path}")
     with open(details_path, encoding="utf-8") as f:
         details_raw = json.load(f)
+    if not details_raw:
+        raise ValueError(f"Unexpected empty details JSON: {details_path}")
 
     # Ratings map: (season_number, episode_number) -> {rating, votes}
     ratings_map = {}
