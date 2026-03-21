@@ -701,3 +701,25 @@ section {
     margin: 0;
   }
 }
+/* ── HERO SVG BRANDING ───────────────────────────────────────────────────────── */
+.hero-banner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.hero-shield {
+  width: 64px;
+  height: 64px;
+  fill: var(--blood);
+  color: var(--blood);
+}
+
+.hero-title-svg {
+  height: 44px;
+  fill: var(--pale);
+  color: var(--pale);
+  flex: 1;
+  max-width: 512px;
+}

@@ -5,9 +5,12 @@ export function initHero(stats) {
   const el = document.getElementById('hero');
 
   el.innerHTML = `
-    <div class="hero-eyebrow">Buffy the Vampire Slayer · 1997–2003</div>
-    <h1>Into Every<br><em>Generation</em></h1>
-    <div class="hero-tagline">Seven seasons of dialogue, data &amp; darkness</div>
+    <div class="hero-banner">
+      <img src="img/SHIELD logo.svg" class="hero-shield" alt="S.H.I.E.L.D. logo">
+      <img src="img/Coulson academy title.svg" class="hero-title-svg" alt="Coulson Academy">
+    </div>
+    <div class="hero-eyebrow">Agents of S.H.I.E.L.D. · 2013–2020</div>
+    <div class="hero-tagline">Seven seasons of dialogue, data &amp; classified intel</div>
     <div class="stat-grid">
       <div class="stat-card">
         <div class="num">${meta.total_lines.toLocaleString()}</div>
