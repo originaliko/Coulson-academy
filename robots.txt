@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://originaliko.github.io/Buffy-Search/sitemap.xml

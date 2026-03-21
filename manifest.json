@@ -1,0 +1,13 @@
+{
+  "name": "Buffy the Vampire Slayer — Data & Dialogue",
+  "short_name": "Buffy Data",
+  "description": "Interactive data visualisation of all 144 Buffy the Vampire Slayer episodes — dialogue stats, ratings, colour palettes and more.",
+  "icons": [
+    { "src": "/img/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0D0D0F",
+  "background_color": "#0D0D0F",
+  "display": "standalone",
+  "start_url": "/"
+}
