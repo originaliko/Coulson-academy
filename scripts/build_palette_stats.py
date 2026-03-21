@@ -2,16 +2,14 @@
 """
 build_palette_stats.py
 
-Reads dataset/palettes/season*.json files, computes per-episode colour
+Reads palettes/all_palettes.json, computes per-episode colour
 statistics, and writes data/palette_stats.json.
 
-Run this whenever new palette season files are added or regenerated.
+Run this whenever all_palettes.json is added or regenerated.
 """
 
-import json, math, re, os, glob
+import json, math, re, os
 from colorsys import rgb_to_hls
-
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def hex_to_hsl(hex_color):
@@ -25,8 +23,8 @@ def hex_to_hsl(hex_color):
 
 
 def ep_id_from_filename(filename):
-    """'buffy-s02e01-palette.png' → 's02e01'"""
-    m = re.search(r'buffy-(s\d+e\d+)-palette', filename or '', re.IGNORECASE)
+    """'aos-s02e01-palette.png' → 's02e01'"""
+    m = re.search(r'aos-(s\d+e\d+)-palette', filename or '', re.IGNORECASE)
     return m.group(1).lower() if m else None
 
 
@@ -61,32 +59,31 @@ def compute_stats(colors):
 
 
 def main():
-    palette_dir = os.path.join(ROOT, "dataset", "palettes")
-    out_path    = os.path.join(ROOT, "data", "palette_stats.json")
+    root         = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    palettes_json = os.path.join(root, "palettes", "all_palettes.json")
+    out_path     = os.path.join(root, "data", "palette_stats.json")
 
-    season_files = sorted(
-        glob.glob(os.path.join(palette_dir, "*[Ss]eason*.json")),
-        key=lambda p: p.lower()
-    )
-
-    if not season_files:
-        print(f"No season JSON files found in {palette_dir}")
+    if not os.path.exists(palettes_json):
+        print(f"No palette data found at {palettes_json} — writing empty palette_stats.json")
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump({}, f)
         return
 
+    with open(palettes_json, encoding="utf-8") as f:
+        episodes = json.load(f)
+
     result = {}
-    for path in season_files:
-        with open(path, encoding="utf-8") as f:
-            episodes = json.load(f)
-        for ep in episodes:
-            palette_file = ep.get("palette_png") or ep.get("output", "")
-            eid = ep_id_from_filename(palette_file)
-            if not eid or not ep.get("colors"):
-                continue
-            result[eid] = compute_stats(ep["colors"])
-            s = result[eid]
-            print(f"  {eid}  brightness={s['avg_l']:5.1f}  saturation={s['avg_s']:4.1f}"
-                  f"  contrast={s['std_l']:4.1f}  warm={s['warm_pct']:3d}%"
-                  f"  blue={s['blue_pct']:3d}%  green={s['green_pct']:3d}%")
+    for ep in episodes:
+        palette_file = ep.get("palette_png") or ep.get("output", "")
+        eid = ep_id_from_filename(palette_file)
+        if not eid or not ep.get("colors"):
+            continue
+        result[eid] = compute_stats(ep["colors"])
+        s = result[eid]
+        print(f"  {eid}  brightness={s['avg_l']:5.1f}  saturation={s['avg_s']:4.1f}"
+              f"  contrast={s['std_l']:4.1f}  warm={s['warm_pct']:3d}%"
+              f"  blue={s['blue_pct']:3d}%  green={s['green_pct']:3d}%")
 
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
