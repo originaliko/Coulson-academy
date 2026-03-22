@@ -2,16 +2,16 @@
   {
     "id": "s01e01-shield-acronym",
     "lines": [
-      { "speaker": "Hill", "line": "What does \"S.H.I.E.L.D.\" stand for, Agent Ward?" },
+      { "speaker": "Hill", "line": "What does \"S.H.I.E.L.D.\" stand for, Agent Ward?", "color": "#00b4d8" },
       { "speaker": "Ward", "line": "Strategic Homeland Intervention, Enforcement and Logistics Division." },
-      { "speaker": "Hill", "line": "And what does that mean to you?" },
+      { "speaker": "Hill", "line": "And what does that mean to you?", "color": "#00b4d8" },
       { "speaker": "Ward", "line": "It means someone really wanted our initials to spell out \"SHIELD.\" It means we're the line… between the world and the much weirder world. We protect people from news they aren't ready to hear. And when we can't do that, we keep them safe.", "duration": 8000 }
     ]
   },
   {
     "id": "s01e01-magical-place",
     "lines": [
-      { "speaker": "Skye", "line": "He told me he's been to Paris, but he's never really seen it and that he wishes you had stayed in Tahiti." },
+      { "speaker": "Skye", "line": "He told me he's been to Paris, but he's never really seen it and that he wishes you had stayed in Tahiti.", "color": "#38bdf8" },
       { "speaker": "Coulson", "line": "It's a magical place.", "duration": 3000 }
     ]
   },
@@ -42,6 +42,29 @@
     "id": "s02e10-hunter-shield",
     "lines": [
       { "speaker": "Hunter", "line": "Join S.H.I.E.L.D. Travel to exotic, distant lands. Meet exciting, unusual people… and kill them.", "duration": 5000 }
+    ]
+  },
+  {
+    "id":"s01e09-warm-and-fuzzy",
+    "lines":[
+      { "speaker": "Coulson", "line": "This is a delicate situation. We don’t know what kind of danger this woman poses, so I’ll make initial contact with Agents Ward and May."},
+      { "speaker": "Skye", "line": "It’s a delicate situation, so you’re bringing along Warm and Fuzzy?", "color": "#38bdf8"}
+    ]
+  },
+  {
+    "id":"s01e06-fzzt",
+    "lines":[
+      {"speaker": "Simmons", "line": "Working up a good sweat there, sir?"},
+      {"speaker": "Coulson", "line": "I don’t sweat. I glisten."}
+    ]
+  },
+  {
+    "id":"s01e04-I-spy",
+    "lines":[
+      {"speaker":"Coulson", "line": "You seen Skye?"},
+      {"speaker":"Ward", "line": "Not since weapons training."},
+      {"speaker":"Coulson", "line": "She stop saying “bang” when she pulls the trigger?"},
+      {"speaker":"Ward", "line": "Mostly. Now if she can just learn the difference between the safety release and the magazine release, we’ll be making real progress."}
     ]
   }
 ]

@@ -99,7 +99,7 @@ export function initQuotes(stats) {
       slot.innerHTML = '';
     }
 
-    const color = colorMap[speaker.toLowerCase()] || null;
+    const color = lineObj.color || colorMap[speaker.toLowerCase()] || null;
 
     const speakerEl = document.createElement('div');
     speakerEl.className = 'dl-speaker';
@@ -142,7 +142,6 @@ export function initQuotes(stats) {
     img.className = 'dl-avatar';
     img.alt = speaker;
     const key = avatarOverride || AVATAR_SLUG[speaker.toLowerCase()] || speaker.toLowerCase();
-    console.log("Avata", key);
     img.src = `img/pixels/${key}.png`;
     img.onerror = () => { img.src = 'img/pixels/default.png'; };
     wrap.appendChild(img);
@@ -152,4 +151,6 @@ export function initQuotes(stats) {
   // Dev helpers — use in browser console to freeze/resume the quotes player
   window.quotesPause  = () => clearTimeout(timer);
   window.quotesResume = () => playNextScene();
+
+  window.colorMap = colorMap;
 }
