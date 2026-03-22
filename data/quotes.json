@@ -1,0 +1,47 @@
+[
+  {
+    "id": "s01e01-shield-acronym",
+    "lines": [
+      { "speaker": "Hill", "line": "What does \"S.H.I.E.L.D.\" stand for, Agent Ward?" },
+      { "speaker": "Ward", "line": "Strategic Homeland Intervention, Enforcement and Logistics Division." },
+      { "speaker": "Hill", "line": "And what does that mean to you?" },
+      { "speaker": "Ward", "line": "It means someone really wanted our initials to spell out \"SHIELD.\" It means we're the line… between the world and the much weirder world. We protect people from news they aren't ready to hear. And when we can't do that, we keep them safe.", "duration": 8000 }
+    ]
+  },
+  {
+    "id": "s01e01-magical-place",
+    "lines": [
+      { "speaker": "Skye", "line": "He told me he's been to Paris, but he's never really seen it and that he wishes you had stayed in Tahiti." },
+      { "speaker": "Coulson", "line": "It's a magical place.", "duration": 3000 }
+    ]
+  },
+  {
+    "id": "s01e02-cavalry",
+    "lines": [
+      { "speaker": "Ward", "line": "Tires match the prof's truck. Where's your sidearm?" },
+      { "speaker": "May", "line": "If I need a gun, I'll take one." },
+      { "speaker": "Ward", "line": "Right. Forgot I was working with \"the cavalry.\"" }
+    ]
+  },
+  {
+    "id": "s01e18-agents-of-shield",
+    "lines": [
+      { "speaker": "May", "line": "And what reason is that?" },
+      { "speaker": "Coulson", "line": "I don't know, May! I don't know! There's got to be something here! This means something! This has to mean something! The world needs us! Hydra is out there! We cannot let them win. We … we cannot let them define us. Do you understand that? We are not agents of nothing! We are agents of S.H.I.E.L.D., and that still carries weight! It… it has to carry weight! After everything we've been through, that carries weight! I'm sorry.", "duration": 12000 }
+    ]
+  },
+  {
+    "id": "s01e22-breathing",
+    "lines": [
+      { "speaker": "Coulson", "line": "You got a chance to express all your feelings?", "duration": 2500 },
+      { "speaker": "May", "line": "Is he still breathing?", "avatar": "may-2" },
+      { "speaker": "Coulson", "line": "Guess she kept some of it to herself.", "duration": 3000 }
+    ]
+  },
+  {
+    "id": "s02e10-hunter-shield",
+    "lines": [
+      { "speaker": "Hunter", "line": "Join S.H.I.E.L.D. Travel to exotic, distant lands. Meet exciting, unusual people… and kill them.", "duration": 5000 }
+    ]
+  }
+]

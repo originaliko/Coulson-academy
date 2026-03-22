@@ -1,7 +1,8 @@
 // js/episode-explorer.js
 import { loadDialogues } from './main.js';
 
-const OTHER_COLOR = '#444444';
+const OTHER_COLOR = '#888888';
+const CHARS_PER_MIN = 2000; // reading speed for auto-play timing
 
 // Build character color map from stats.characters
 function buildColorMap(characters) {
@@ -58,7 +59,7 @@ export function initExplorer(stats) {
 
   // Build legend HTML
   const legendHTML = characters.map(c =>
-    `<div class="char-pill">
+    `<div class="char-pill" data-char="${c.name}">
        <div class="swatch" style="background:${c.color}"></div>${c.name}
      </div>`
   ).join('') + `<div class="char-pill"><div class="swatch" style="background:${OTHER_COLOR}"></div>Other</div>`;
@@ -78,51 +79,80 @@ export function initExplorer(stats) {
       <select class="ep-select" id="ep-select"></select>
       <button class="play-btn" id="play-btn" aria-label="Play episode" title="Play episode">▶</button>
       <button class="speed-btn" id="speed-minus" title="Slower">−</button>
-      <span class="speed-display" id="speed-display">1.0s</span>
+      <span class="speed-display" id="speed-display">1.0x</span>
       <button class="speed-btn" id="speed-plus" title="Faster">+</button>
     </div>
     <div class="dot-grid" id="dot-grid"></div>
-    <div class="dot-line-display" id="dot-line-display"><span class="dl-placeholder">Hover a dot to read the line</span></div>
+    <div class="dot-line-display" id="dot-line-display">
+      <div class="dl-slot dl-slot-left"><span class="dl-placeholder">Hover a dot to read the line</span></div>
+      <div class="dl-slot dl-slot-right"></div>
+    </div>
     <div class="ep-info-bar" id="ep-info-bar"></div>
   `;
 
-  const dotGrid = el.querySelector('#dot-grid');
-  const epSelect = el.querySelector('#ep-select');
-  const infoBar = el.querySelector('#ep-info-bar');
-  const lineDisplay = el.querySelector('#dot-line-display');
-  const playBtn      = el.querySelector('#play-btn');
-  const speedMinus   = el.querySelector('#speed-minus');
-  const speedPlus    = el.querySelector('#speed-plus');
+  const dotGrid    = el.querySelector('#dot-grid');
+  const epSelect   = el.querySelector('#ep-select');
+  const infoBar    = el.querySelector('#ep-info-bar');
+  const slotLeft   = el.querySelector('.dl-slot-left');
+  const slotRight  = el.querySelector('.dl-slot-right');
+  const playBtn    = el.querySelector('#play-btn');
+  const speedMinus = el.querySelector('#speed-minus');
+  const speedPlus  = el.querySelector('#speed-plus');
   const speedDisplay = el.querySelector('#speed-display');
-  const seasonBtns   = el.querySelectorAll('.season-btn');
+  const seasonBtns = el.querySelectorAll('.season-btn');
 
-  let selectedDot  = null;
-  let playInterval = null;
-  let playIndex    = 0;
-  let playSpeed    = 1000; // ms
+  const PAGE_CHARS = 180; // max chars per bubble page in auto-play
+
+  let selectedDot       = null;
+  let playTimer         = null;
+  let pageTimers        = [];
+  let playIndex         = 0;
+  let playSpeedMult     = 1.0; // multiplier on char-based timing
+  let lastDisplayedChar = null;
+  let displaySide       = 'right'; // start 'right' so first speaker flips to 'left'
 
   function updateSpeedDisplay() {
-    speedDisplay.textContent = (playSpeed / 1000).toFixed(1) + 's';
+    speedDisplay.textContent = playSpeedMult.toFixed(1) + 'x';
   }
 
   speedMinus.addEventListener('click', () => {
-    playSpeed = Math.min(playSpeed + 100, 3000);
+    playSpeedMult = Math.min(+(playSpeedMult + 0.1).toFixed(1), 3.0);
     updateSpeedDisplay();
-    if (playInterval) { clearInterval(playInterval); playInterval = setInterval(() => stepFn(), playSpeed); }
   });
 
   speedPlus.addEventListener('click', () => {
-    playSpeed = Math.max(playSpeed - 100, 200);
+    playSpeedMult = Math.max(+(playSpeedMult - 0.1).toFixed(1), 0.5);
     updateSpeedDisplay();
-    if (playInterval) { clearInterval(playInterval); playInterval = setInterval(() => stepFn(), playSpeed); }
   });
 
-  let stepFn = () => {}; // reference updated when playback starts
+  function splitPages(text) {
+    if (text.length <= PAGE_CHARS) return [text];
+    const pages = [];
+    const words = text.split(' ');
+    let current = '';
+    for (const word of words) {
+      const next = current ? current + ' ' + word : word;
+      if (current && next.length > PAGE_CHARS) {
+        pages.push(current);
+        current = word;
+      } else {
+        current = next;
+      }
+    }
+    if (current) pages.push(current);
+    return pages;
+  }
+
+  function clearPageTimers() {
+    pageTimers.forEach(t => clearTimeout(t));
+    pageTimers = [];
+  }
 
   function stopPlayback() {
-    if (!playInterval) return;
-    clearInterval(playInterval);
-    playInterval = null;
+    if (!playTimer) return;
+    clearTimeout(playTimer);
+    clearPageTimers();
+    playTimer = null;
     playBtn.textContent = '▶';
     dotGrid.querySelectorAll('.dot.playing').forEach(d => d.classList.remove('playing'));
   }
@@ -131,7 +161,6 @@ export function initExplorer(stats) {
     const allDots = Array.from(dotGrid.querySelectorAll('.dot')).filter(d => d.dataset.line);
     if (!allDots.length) return;
 
-    // If a dot is selected, resume from there; otherwise start from beginning
     playIndex = selectedDot ? allDots.indexOf(selectedDot) : 0;
     if (playIndex < 0) playIndex = 0;
     clearSelection();
@@ -141,24 +170,44 @@ export function initExplorer(stats) {
     function step() {
       if (playIndex >= allDots.length) {
         stopPlayback();
-        lineDisplay.innerHTML = '<span class="dl-placeholder">Hover a dot to read the line</span>';
+        resetSlots();
         return;
       }
       dotGrid.querySelectorAll('.dot.playing').forEach(d => d.classList.remove('playing'));
       const dot = allDots[playIndex];
       dot.classList.add('playing');
       dot.scrollIntoView({ block: 'nearest' });
-      showDotLine(dot.dataset.char || null, dot.dataset.line, dot.style.background);
+      const line = dot.dataset.line || '';
+      const pages = splitPages(line);
+      // Show first page (not the full text) so pagination is visible
+      showDotLine(dot.dataset.char || null, pages[0], dot.style.background);
       playIndex++;
+
+      // Schedule remaining pages
+      clearPageTimers();
+      const delay = Math.max(1500, (line.length / CHARS_PER_MIN) * 60000 * playSpeedMult);
+      if (pages.length > 1) {
+        const slot = displaySide === 'left' ? slotLeft : slotRight;
+        const initialBubble = slot.querySelector('.dl-bubble');
+        if (initialBubble) initialBubble.classList.add('dl-bubble--paged');
+        const pageDelay = delay / pages.length;
+        for (let p = 1; p < pages.length; p++) {
+          pageTimers.push(setTimeout(() => {
+            const bubble = slot.querySelector('.dl-bubble');
+            if (!bubble) return;
+            bubble.textContent = pages[p];
+            if (p < pages.length - 1) bubble.classList.add('dl-bubble--paged');
+          }, pageDelay * p));
+        }
+      }
+      playTimer = setTimeout(step, delay);
     }
 
-    stepFn = step;
     step();
-    playInterval = setInterval(step, playSpeed);
   }
 
   playBtn.addEventListener('click', () => {
-    if (playInterval) {
+    if (playTimer) {
       stopPlayback();
     } else {
       startPlayback();
@@ -166,6 +215,25 @@ export function initExplorer(stats) {
   });
 
   const ENDS_WITH_PUNCT = /[.!?,;:\u2026\u201D"']$/;
+
+  // Override character name → avatar filename (without .png)
+  const AVATAR_SLUG = {
+    daisy: 'skye',
+  };
+
+  function makeAvatar(char) {
+    const wrap = document.createElement('div');
+    wrap.className = 'dl-avatar-wrap';
+    const img = document.createElement('img');
+    img.className = 'dl-avatar';
+    img.alt = char || '';
+    const key = (char || '').toLowerCase();
+    const slug = AVATAR_SLUG[key] || key;
+    img.src = `img/pixels/${slug}.png`;
+    img.onerror = () => { img.src = 'img/pixels/default.png'; };
+    wrap.appendChild(img);
+    return wrap;
+  }
 
   function makeCharPill(char, color) {
     const charEl = document.createElement('span');
@@ -175,13 +243,52 @@ export function initExplorer(stats) {
     return charEl;
   }
 
+  // Flip side when the speaker changes
+  function applySide(char) {
+    if (char && char !== lastDisplayedChar) {
+      displaySide = displaySide === 'left' ? 'right' : 'left';
+      lastDisplayedChar = char;
+    }
+  }
+
+  function highlightLegend(char) {
+    el.querySelectorAll('.char-legend .char-pill').forEach(p => p.classList.remove('active'));
+    if (char) {
+      const pill = el.querySelector(`.char-legend .char-pill[data-char="${char}"]`);
+      if (pill) pill.classList.add('active');
+    }
+  }
+
+  // Build and insert a speaker column (pill → bubble → avatar) into the correct slot
+  function showSpeaker(char, color, bubbleContent) {
+    applySide(char);
+    highlightLegend(char);
+    const slot = displaySide === 'left' ? slotLeft : slotRight;
+    slot.innerHTML = '';
+
+    const speaker = document.createElement('div');
+    speaker.className = 'dl-speaker';
+
+    const group = document.createElement('div');
+    group.className = 'dl-bubble-group';
+    if (char) group.appendChild(makeCharPill(char, color));
+
+    const bubble = document.createElement('div');
+    bubble.className = 'dl-bubble';
+    if (typeof bubbleContent === 'string') {
+      bubble.textContent = bubbleContent;
+    } else {
+      bubble.appendChild(bubbleContent);
+    }
+    group.appendChild(bubble);
+    speaker.appendChild(group);
+    speaker.appendChild(makeAvatar(char));
+
+    slot.appendChild(speaker);
+  }
+
   function showDotLine(char, line, color) {
-    lineDisplay.innerHTML = '';
-    if (char) lineDisplay.appendChild(makeCharPill(char, color));
-    const lineEl = document.createElement('span');
-    lineEl.className = 'dl-text';
-    lineEl.textContent = line;
-    lineDisplay.appendChild(lineEl);
+    showSpeaker(char, color, line);
   }
 
   function showDotRun(clickedDot) {
@@ -197,7 +304,7 @@ export function initExplorer(stats) {
 
     // Merge lines that don't end with punctuation into the following line
     const runDots = allDots.slice(start, end + 1);
-    const merged = []; // { text, indices: [original indices] }
+    const merged = [];
     let i = 0;
     while (i < runDots.length) {
       let text = runDots[i].dataset.line;
@@ -212,12 +319,9 @@ export function initExplorer(stats) {
     }
 
     if (merged.length === 1) {
-      showDotLine(char || null, merged[0].text, color);
+      showSpeaker(char || null, color, merged[0].text);
       return;
     }
-
-    lineDisplay.innerHTML = '';
-    if (char) lineDisplay.appendChild(makeCharPill(char, color));
 
     const runEl = document.createElement('div');
     runEl.className = 'dl-run-lines';
@@ -228,16 +332,25 @@ export function initExplorer(stats) {
       lineEl.textContent = entry.text;
       runEl.appendChild(lineEl);
     });
-    lineDisplay.appendChild(runEl);
+
+    showSpeaker(char || null, color, runEl);
+  }
+
+  function resetSlots() {
+    highlightLegend(null);
+    lastDisplayedChar = null;
+    displaySide = 'right';
+    slotLeft.innerHTML = '<span class="dl-placeholder">Hover a dot to read the line</span>';
+    slotRight.innerHTML = '';
   }
 
   function resetLineDisplay() {
-    if (selectedDot || playInterval) return;
-    lineDisplay.innerHTML = '<span class="dl-placeholder">Hover a dot to read the line</span>';
+    if (selectedDot || playTimer) return;
+    resetSlots();
   }
 
   dotGrid.addEventListener('mouseover', e => {
-    if (selectedDot || playInterval) return;
+    if (selectedDot || playTimer) return;
     const dot = e.target.closest('.dot');
     if (!dot || !dot.dataset.line) return;
     showDotLine(dot.dataset.char || null, dot.dataset.line, dot.style.background);
@@ -246,17 +359,21 @@ export function initExplorer(stats) {
   dotGrid.addEventListener('click', e => {
     const dot = e.target.closest('.dot');
     if (!dot || !dot.dataset.line) return;
-    if (playInterval) { stopPlayback(); return; }
-    // clicking the same dot again deselects
+    if (playTimer) { stopPlayback(); return; }
     if (selectedDot === dot) {
       selectedDot.classList.remove('selected');
       selectedDot = null;
-      lineDisplay.innerHTML = '<span class="dl-placeholder">Hover a dot to read the line</span>';
+      resetSlots();
       return;
     }
     if (selectedDot) selectedDot.classList.remove('selected');
     selectedDot = dot;
     dot.classList.add('selected');
+    // Reset sides so the clicked speaker always appears on the left
+    lastDisplayedChar = null;
+    displaySide = 'right';
+    slotLeft.innerHTML = '';
+    slotRight.innerHTML = '';
     showDotRun(dot);
   });
 
@@ -264,7 +381,7 @@ export function initExplorer(stats) {
   function clearSelection() {
     stopPlayback();
     if (selectedDot) { selectedDot.classList.remove('selected'); selectedDot = null; }
-    lineDisplay.innerHTML = '<span class="dl-placeholder">Hover a dot to read the line</span>';
+    resetSlots();
   }
 
   let dialoguesData = null;
@@ -327,7 +444,7 @@ export function initExplorer(stats) {
   const firstEp = (bySeason[seasons[0]] || [])[0];
   if (firstEp) showEpisode(firstEp.id);
 
-  // Start loading dialogues immediately in background so colored dots appear without user interaction
+  // Start loading dialogues immediately in background
   isLoading = true;
   loadDialogues()
     .then(data => {
