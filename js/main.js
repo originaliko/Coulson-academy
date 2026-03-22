@@ -9,6 +9,7 @@ import { initPalette }       from './palette.js';
 import { initCatchphrases }  from './catchphrases.js';
 import { initFirstLast }     from './firstlast.js';
 import { initSearch }        from './search.js';
+import { initQuotes }        from './quotes.js';
 
 // ── Shared lazy-load promise for dialogues.json ──────────────────────────────
 // Note: episode-explorer.js and search.js import this function from main.js,
@@ -62,6 +63,7 @@ async function boot() {
   }
 
   initHero(stats);
+  initQuotes(stats);
   initCharacters(stats);
   initExplorer(stats);
   initRatings(stats);
