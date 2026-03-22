@@ -678,6 +678,7 @@ section {
   gap: 6px;
 }
 .site-footer a { color: var(--ghost); }
+.site-footer a.buffy{ color: #8B0000 }
 .site-footer a:hover { color: var(--stake); }
 .site-footer .iko { display: inline-flex; align-items: center;}
 .site-footer svg { height: 20px; width: auto; fill: var(--ghost);}
