@@ -42,15 +42,15 @@ for _canonical, _aliases in SECONDARY_CHARACTERS.items():
         SECONDARY_ALIAS_MAP[_alias.lower()] = _canonical
 
 CATCHPHRASES = [
-    "Hail Hydra",
-    "Agents of S.H.I.E.L.D.",
-    "Level 7",
-    "The Bus",
-    "magical place",
-    "If I need a gun",
-    "lanyards",
-    "The cavalry",
-    "The destroyer",
+    {"search": "Hail Hydra",             "label": "Hail Hydra"},
+    {"search": "Agents of S.H.I.E.L.D.", "label": "Agents of S.H.I.E.L.D."},
+    {"search": "Level 7",                "label": "Welcome to Level 7"},
+    {"search": "The Bus",                "label": "The Bus"},
+    {"search": "magical place",          "label": "Tahiti, it's a magical place"},
+    {"search": "If I need a gun",        "label": "If I need a gun"},
+    {"search": "lanyard",               "label": "Lanyard"},
+    {"search": "The cavalry",            "label": "The cavalry"},
+    {"search": "The destroyer",          "label": "The destroyer of worlds"},
 ]
 
 # ── DERIVED LOOKUP ────────────────────────────────────────────────────────────
@@ -204,12 +204,13 @@ def accumulate_episode(rows, ep_id, alias_map, stats):
                 stats["sec_char_first"][sec_canonical] = {"line": row["line"], "ep_id": ep_id}
 
         for phrase in CATCHPHRASES:
-            if phrase_matches(phrase, row["line"]):
-                stats["phrase_totals"][phrase] = stats["phrase_totals"].get(phrase, 0) + 1
-                stats["phrase_by_char"].setdefault(phrase, {})
+            if phrase_matches(phrase["search"], row["line"]):
+                key = phrase["search"]
+                stats["phrase_totals"][key] = stats["phrase_totals"].get(key, 0) + 1
+                stats["phrase_by_char"].setdefault(key, {})
                 if canonical:
-                    stats["phrase_by_char"][phrase][canonical] = (
-                        stats["phrase_by_char"][phrase].get(canonical, 0) + 1
+                    stats["phrase_by_char"][key][canonical] = (
+                        stats["phrase_by_char"][key].get(canonical, 0) + 1
                     )
 
         stats["ep_line_count"][ep_id] += 1
@@ -253,11 +254,13 @@ def build_stats_json(stats, episode_meta):
 
     catchphrases_out = []
     for phrase in CATCHPHRASES:
-        by_char = stats["phrase_by_char"].get(phrase, {})
+        key     = phrase["search"]
+        by_char = stats["phrase_by_char"].get(key, {})
         total   = sum(by_char.values())
         top     = max(by_char, key=by_char.get) if by_char else ""
         catchphrases_out.append({
-            "phrase":        phrase,
+            "phrase":        key,
+            "label":         phrase["label"],
             "total":         total,
             "top_character": top,
             "by_character":  dict(sorted(by_char.items(), key=lambda x: -x[1])),

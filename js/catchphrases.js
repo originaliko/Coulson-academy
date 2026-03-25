@@ -18,7 +18,7 @@ export function initCatchphrases(stats) {
   new Chart(document.getElementById('catchphrases-canvas'), {
     type: 'bar',
     data: {
-      labels: sorted.map(p => `${p.phrase}  (${p.total})`),
+      labels: sorted.map(p => `${p.label}  (${p.total})`),
       datasets: [{
         data: sorted.map(p => p.total),
         backgroundColor: '#C8860A',
