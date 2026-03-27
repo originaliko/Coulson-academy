@@ -79,7 +79,7 @@ Morse: You got a how?
 May: S.H.I.E.L.D.’s been monitoring several Hydra bank accounts for a while now. One just woke up. Cayman Islands.
 Morse: Well, Strucker needed funds. Makes sense. What’s the op?
 May: How’s your Mandarin?
-Morse (in Mandarin): You tell me.
+Morse : (in Mandarin) You tell me.
 May: If we head down there, maybe we’ll pick up his trail. He’s on the run from Ward, from us. Almost makes me feel sorry for the kid.
 Strucker: He’s a monster.
 Malick: You were right to ask me to come.
@@ -146,10 +146,10 @@ Hunter: I’ll drive. I mean, please.
 Morse: Ms. Wong would like to access her safe-deposit box. Here’s her account number.
 Deschamps: I will need your I.D.s, please.
 Morse: Of course. (in Mandarin) Let’s hope Fitz got these right.
-May (in Mandarin): Your batons ready?
+May : (in Mandarin) Your batons ready?
 Morse: Ms. Wong likes your tie.
 Deschamps: Follow me.
-May (in Mandarin): Here we go.
+May : (in Mandarin) Here we go.
 Deschamps: Take as much time as you need.
 May: Box 38.
 Morse: Fitz, we need anything on Strucker, anything that will get us to Ward.
@@ -159,26 +159,26 @@ Fitz: Oh, uh, guys, I think you triggered an alarm somewhere.
 May: Great.
 Morse: How much time do we have?
 Fitz: Uh… Oh. Looks like zero.
-May (in Mandarin): We’re screwed.
+May : (in Mandarin) We’re screwed.
 Deschamps: What is happening in here?
-May (in Mandarin): I’ll take out the one on the left. You go for the one on the right. Manager won’t be an issue.
+May : (in Mandarin) I’ll take out the one on the left. You go for the one on the right. Manager won’t be an issue.
 Morse: My boss would like to congratulate you.
 Deschamps: What?
-May (in Mandarin): What?
+May : (in Mandarin) What?
 Morse: Your security system is top-notch, and your team is incredibly efficient. Just what we’d hoped for.
-May (in Mandarin): You must be kidding me…
+May : (in Mandarin) You must be kidding me…
 Morse: We’ve been reading up on you.
 Fitz: Oh, I see where you’re going with this. One second.
 Morse: We’d like to offer you a job.
 Deschamps: A job? This seems most unorthodox.
 Morse: We were sent from your former employer, First Fiduciary National, and they would like you back. I know it’s been hard, your wife missing Miami. How long have you been separated?
 Deschamps: You know about that?
-May (in Mandarin): Seriously, this is not a good idea.
+May : (in Mandarin) Seriously, this is not a good idea.
 Morse: You’re only earning 4% more than you were in 2012. We can do better.
-May (in Mandarin): That’s just mean.
+May : (in Mandarin) That’s just mean.
 Deschamps: I… I have been looking to make a change.
-Morse (in Mandarin): See? Diplomacy works.
-May (in Mandarin): Not for this guy. Now we do it my way.
+Morse : (in Mandarin) See? Diplomacy works.
+May : (in Mandarin) Not for this guy. Now we do it my way.
 May: Sorry.
 Hunter: No one yet. Banks still not back.
 Mack: He wasn’t back 37 seconds ago, either, but thanks for the regular updates.

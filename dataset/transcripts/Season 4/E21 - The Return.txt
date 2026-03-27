@@ -135,7 +135,7 @@ AIDA: I thought his presence is what you’d have wished for. I’m sorry. I was
 Fitz: Who? Radcliffe, our team, yeah. Who else is on that list?
 AIDA: Oh, no.
 Fitz: What did you promise the Russian? What’s waiting back there for my friends?
-Ivanov (in Russian): OK, it’s ready.
+Ivanov : (in Russian) OK, it’s ready.
 Coulson: Hey. Well-done.
 May: You, too. Doesn’t make sense, though.
 Coulson: Yeah. If they wanted to kill us, they could’ve just flooded the place. Why were they stalling?

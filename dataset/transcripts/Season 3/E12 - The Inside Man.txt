@@ -2,7 +2,7 @@ Hive: Grant Ward. I wish we could have met under different circumstances.
 Malick: He was a good soldier. He dedicated his life to HYDRA.
 Hive: Thank you for arranging that. He was strong, resilient, a perfect host.
 Malick: I made some moves this week to ensure we have all the inhumans we need when the time comes. In fact, I just acquired one you might find useful. Bring him in.
-Lucio (in Spanish): You’re a bunch of filthy pigs and I’m going to kill you all.
+Lucio : (in Spanish) You’re a bunch of filthy pigs and I’m going to kill you all.
 Malick: See if you can get through to him.
 Hive: I want to see his eyes.
 Lucio: What are you?
@@ -266,7 +266,7 @@ Giyera: These are the healthiest we could find. Lucio has frozen them in place f
 Hive: Yes. Well done.
 Giyera: One will be your host?
 Hive: I have a better use for them.
-Lucio (in Spanish): They’re innocent.
+Lucio : (in Spanish) They’re innocent.
 Hive: Yes, they are innocents. But they will serve the greater good.
 Coulson: You gentlemen interested in changing jobs? Good guys are hiring. You don’t get to kill people in cold blood, but we got a really good retirement plan. Where’s your boss? Didn’t have the guts to do this himself?
 Malick: Yes. But I also have money to pay people to do my menial jobs.

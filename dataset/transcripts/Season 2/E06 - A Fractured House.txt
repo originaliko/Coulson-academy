@@ -132,8 +132,8 @@ Hunter: Data intercept’s up and running. We have audio and visual from the sec
 Morse: Toshiro-san. (in Japanese) It’s good to see you again.
 May: She speaks Japanese?
 Hunter: She has this annoying knack for picking things up very quickly.
-Toshiro (in Japanese): And you even lightened your hair? Now you really look like a good old Southern girl.
-Morse (in Japanese): Would you believe me if I told you I did it for you, Toshiro?
+Toshiro : (in Japanese) And you even lightened your hair? Now you really look like a good old Southern girl.
+Morse : (in Japanese) Would you believe me if I told you I did it for you, Toshiro?
 Toshiro: No.
 May: Still like option two?
 Morse: Do you still have that pan-fired green tea? It’s from the Shizuoka prefecture, right?

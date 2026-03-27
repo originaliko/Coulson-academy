@@ -1,5 +1,5 @@
 Coulson: I don’t mean to alarm you, but I think you may have a mold problem. That sink with the standing water seems especially concerning.
-Soldier (in Russian): Just wait until the Interrogator gets here. He won’t be smiling then.
+Soldier : (in Russian) Just wait until the Interrogator gets here. He won’t be smiling then.
 Coulson: Looking forward to it.
 Coulson: You have the intel on you? They know.
 Interrogator: They know?
@@ -98,7 +98,7 @@ Fitz: So Simmons, by this point, does not have a bloody clue. You know, we’re 
 Ward: Do you have the beacon?
 Fitz: Yeah. But it’s funny because vacuum chambers are so dry… and this instrument was actually supposed to go into space. It had sensitive chemical components. Simmons actually tells it a lot better than I do.
 Ward: Listen. My contact’s Uri Dubrovsky. We’ll pay him to get us across the border. We go back, but he doesn’t like new people, so keep your mouth shut and your head down.
-Ward (in Russian): Evening. Two vodkas, straight. One for me. And one for my friend, Uri.
+Ward : (in Russian) Evening. Two vodkas, straight. One for me. And one for my friend, Uri.
 Fitz: Um, can you ask what beers that they have on tap?
 Vladimir: Uri’s your friend?
 Ward: Yeah.
@@ -129,7 +129,7 @@ Marta: I heard you were looking for your friend Uri. And Uri was friends with se
 Ward: No. We’re here to stop them.
 Fitz: Definitely here to stop them.
 Ward: Trust me. If you could just help us get across the border…
-Marta (in Russian): Ah, I’m missing the game!
+Marta : (in Russian) Ah, I’m missing the game!
 Marta: You’re wasting my time, so let me be clear. You’ve given me no reason to trust you. And trust is everything to me.
 Skye: Hey. Fancy seeing you here.
 Coulson: Skye, I told you I’d look into the file about your parents. No, I know. That’s not why I’m here. I wanted to know more about Ward and Fitz’s mission. Simmons is seriously starting to unravel without Fitz.

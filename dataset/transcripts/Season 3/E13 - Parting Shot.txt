@@ -75,11 +75,11 @@ Hunter: Well, that’s one way to infiltrate the premises.
 Morse: Please, don’t shoot. Oh, my gosh. We are so sorry.
 Hunter: We were just looking for the main road. Out for a spot of mushroom picking. Y-Y-You see? Mush-rooms?
 Morse: My… My phone battery died, and we got lost. Do you guys have a map?
-Man (in Russian): They think we are idiots. I’m calling the Captain.
-Morse (in Russian): Not idiots. Just slow.
+Man : (in Russian) They think we are idiots. I’m calling the Captain.
+Morse : (in Russian) Not idiots. Just slow.
 Morse: He was just doing his job.
 Hunter: So was Stalin.
-Man (in Russian): The Cabinet Ministers have arrived.
+Man : (in Russian) The Cabinet Ministers have arrived.
 Hunter: What’d he say?
 Mack: Where’d you get the hardware?
 Morse: We ran into some company. Left them tied up in the forest.
@@ -212,10 +212,10 @@ Hunter: I don’t know whether I admire you or feel sad for you or both. Either 
 Morse: Heads up. Malick’s on the move.
 Hunter: Where are you, Bob?
 Morse: South end, upper level. I think he’s going to get the General.
-Man (in Russian): You there. Stop.
-Morse (in Russian): Yes, sir.
-Man (in Russian): Your tie. Where is it?
-Morse (in Russian): You have a very good eye. And a handsome face.
+Man : (in Russian) You there. Stop.
+Morse : (in Russian) Yes, sir.
+Man : (in Russian) Your tie. Where is it?
+Morse : (in Russian) You have a very good eye. And a handsome face.
 Morse: I lost Petrov and Malick! Daisy, little help?
 Daisy: Give me a sec.
 Mack: I’ve got a visual on the General. He’s still locked up. I’m just not sure where.
@@ -273,11 +273,11 @@ Prime Minister: My attaché should be here. Where is Yuri?
 Petrov: He could not see the error of his ways.
 Prime Minister: So, you are all traitors, then?
 Hunter: This way, Prime Minister!
-Morse (in Russian): Change of plans, General.
+Morse : (in Russian) Change of plans, General.
 Coulson: Somebody report. Do we have the Inhuman a safe distance from the Prime Minister?
 Daisy: Yeah, Bobbi’s got him.
-Morse (in Russian): Do as I say, and everything will be fine, General.
-General (in Russian): Do as you say? You have no idea what you’re dealing with.
+Morse : (in Russian) Do as I say, and everything will be fine, General.
+General : (in Russian) Do as you say? You have no idea what you’re dealing with.
 Daisy: I don’t speak Russian, but I know a threat when I hear one.
 Morse: He’s out cold.
 Daisy: Where the hell did it go?

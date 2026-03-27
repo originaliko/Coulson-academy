@@ -6,7 +6,7 @@ Kevin: I would really like that.
 Elena: Hello. It’s good to see you again. You look well. Hello. It’s…
 Joey: Only maybe not tonight.
 Kevin: Really?
-Elena (in Spanish): I’ve got another ride… Gracias.
+Elena : (in Spanish) I’ve got another ride… Gracias.
 Joey: I’m sorry. Something’s come up.
 Daisy: Satellite scans show massive hidden doors, a hangar buried under the oil fields about 300 feet.
 Elena: What is, uh, HYDRA?
@@ -22,8 +22,8 @@ Daisy: We don’t have much, but these are friends who’ve put their lives on t
 Joey: And what about the other 50 feet?
 Daisy: I’ll take care of that.
 Joey: Okay. Uh, when do we land?
-Joey (in Spanish): I hope I don’t get nervous and melt this thing. This is the first time i’ve ever done this.
-Elena (in Spanish): Me too.
+Joey : (in Spanish) I hope I don’t get nervous and melt this thing. This is the first time i’ve ever done this.
+Elena : (in Spanish) Me too.
 Daisy: For one reason or another, each of us has been given a gift. Let’s put ‘em to good use.
 Giyera: I’m glad you’ve arrived. They had our location, so I took the plane.
 Hive: What about the agents? Did any survive?
@@ -35,10 +35,10 @@ Mack: The hatch won’t hold for long.
 Coulson: Fitz, find me something that will keep these guys at bay.
 Joey: Well, I guess we can call this area clear.
 Daisy: Split up. Lincoln and I go solo. You guys take the elevator. Find our team, and report back.
-Elena (in Spanish): So, you invited him up and then just left?
-Joey (in Spanish): Yeah. I’m the worst. I think there are at least six h=guys out there? You?
-Elena (in Spanish): In one hallway? Four.
-Elena (in Spanish): You were right. Six guys.
+Elena : (in Spanish) So, you invited him up and then just left?
+Joey : (in Spanish) Yeah. I’m the worst. I think there are at least six h=guys out there? You?
+Elena : (in Spanish) In one hallway? Four.
+Elena : (in Spanish) You were right. Six guys.
 Daisy: I got eyes on the Zephyr. Entrance is on the north side, sub-level 5. Crash on that location.
 Lincoln: I’ve got Malick.
 Simmons: Catalyst. Careful.
@@ -97,9 +97,9 @@ Daisy: It was a good play. Just tell me next time.
 Lincoln: You should check in on Joey. I think killing Lucio has him pretty shaken.
 Daisy: I completely missed it.
 Lincoln: They did good today, but there’s a lot to get used to at S.H.I.E.L.D.
-Mack (in Spanish): S.H.I.E.L.D. monitors the incredible helps if there is danger. S.H.I.E.L.D. is the new name for the S.S.R. From World Ward Two.
+Mack : (in Spanish) S.H.I.E.L.D. monitors the incredible helps if there is danger. S.H.I.E.L.D. is the new name for the S.S.R. From World Ward Two.
 Elena: I have a new name, too. They all call me “Yo-Yo.” Your fault.
-Mack (in Spanish): I’m sorry. It sounds good.
+Mack : (in Spanish) I’m sorry. It sounds good.
 Elena: I will get my revenge. And your Spanish is much better, not just “pescado.”
 Mack: Yeah. It’s a new S.H.I.E.L.D. requirement. I know you think S.H.I.E.L.D. is dangerous, but, really, our mission is to protect. (in Spanish) We do our best not to kill. Doesn’t kill. Doesn’t kill. Doesn’t kill.
 Elena: And these?
@@ -149,7 +149,7 @@ Daisy: This is common. It’s just a security thing since Malick’s here.
 Elena: Security? (in Spanish) More like paranoid. (in English) I want to do something, or I go home.
 Lincoln: Have they cracked him yet?
 Daisy: He’s cooperating, but we have to be patient. We’ll get our chance.
-Elena (in Spanish): I hate this bureaucratic nonsense.
+Elena : (in Spanish) I hate this bureaucratic nonsense.
 Lincoln: Have you talked to Joey yet?
 Daisy: I’ve tried. I can’t find him anywhere.
 Lincoln: Time for your pain meds.
@@ -242,7 +242,7 @@ Daisy: You’ve kept us in the dark all day.
 Coulson: There’s a situation, Daisy. I need you to get your team to cooperate.
 Elena: Were we attacked?
 Mack: Everything will be all right. I just need you to stay right where you are.
-Elena (in Spanish): You’re coming for us? Why?
+Elena : (in Spanish) You’re coming for us? Why?
 Coulson: May, be cool. Where’s Joey?
 Daisy: I don’t know. Coulson, you need to level with me right now.
 Coulson: We need to get you checked out. Hive can sway Inhumans. Your team may have been exposed in the rescue.
@@ -250,7 +250,7 @@ Lincoln: Wait. Sway, like mind control?
 Coulson: One of you killed Malick. I’m trying to keep everyone safe, including you. Where’s Joey?
 Daisy: My team wouldn’t do that.
 Coulson: They wouldn’t have a choice. It’s like an infection.
-Elena (in Spanish): I thought you protect people.
+Elena : (in Spanish) I thought you protect people.
 Mack: I swear that’s what I’m doing, Yo-Yo.
 Lincoln: We saved your asses, and you come at us?
 Daisy: Lincoln. Why didn’t you tell us?
@@ -263,7 +263,7 @@ Daisy: Where the hell have you been?
 Lincoln: If we don’t get these doors blocked, nobody’s questions get answered!
 Elena: Got it! Okay.
 Joey: Someone explain what’s going on.
-Elena (in Spanish): They turned on us.
+Elena : (in Spanish) They turned on us.
 Lincoln: Malick’s dead. They suspect us.
 Joey: Well, why would they think that?
 Daisy: They think Hive infected one of us while we were in that base.
@@ -278,7 +278,7 @@ Daisy: We stay calm, and we stick together.
 Joey: Why are they sure it’s one of us?
 Daisy: Malick, whatever he said to Coulson has him spooked.
 Joey: But he could be wrong. I mean, they’re taking his word for it?
-Elena (in Spanish): They’re government pigs. We trusted them, and they turned on us.
+Elena : (in Spanish) They’re government pigs. We trusted them, and they turned on us.
 Daisy: What?
 Lincoln: What?
 Elena: Screw S.H.I.E.L.D.
@@ -291,9 +291,9 @@ May: They’re ready to go. Or we can pump in sleeping gas if you give me 10.
 Coulson: Contain for now. If they’re arguing, that means they’re not all turned. Search their bunks and lockers. Figure out what we’re missing here. Hopefully, someone in there is doing the same thing.
 Lincoln: I saw it, Yo-Yo. That’s not a bullet wound, so how’d you get it?
 Elena: I fight 10 people. Accident. (in Spanish) Why doesn’t he believe me? Help me explain.
-Joey (in Spanish): It’s weird you don’t remember.
+Joey : (in Spanish) It’s weird you don’t remember.
 Daisy: What are you saying? Could you please speak English right now?
-Elena (in Spanish): Aren’t you a spy? Learn Spanish.
+Elena : (in Spanish) Aren’t you a spy? Learn Spanish.
 Joey: Hey, look. It’s not important, okay? I don’t care which one of you did this. I just want to leave, one way or another.
 Daisy: Are you saying you’ll fight S.H.I.E.L.D. to get out of here? Because that means me, too.
 Joey: They’re about to break in. I am not going back into isolation.
@@ -313,7 +313,7 @@ Joey: I just want out, with or without your help. Hey, hey, hey!
 Lincoln: Suddenly, you’re willing to fight your way out?
 Elena: Me, too. I don’t trust anyone.
 Lincoln: No one leaves.
-Elena (in Spanish): Are we going to have to fight these two first?
+Elena : (in Spanish) Are we going to have to fight these two first?
 Joey: We need to get out of here.
 Daisy: Stop! He’s right! He’s right. We should get somewhere safe, figure this out on our own terms.
 Lincoln: What? We can’t leave and let an infected person escape!
@@ -325,7 +325,7 @@ Daisy: No, no. This way. It’s not much farther. The original passage is hidden
 Joey: I hope you’re sure about this.
 Coulson: Hi.
 Joey: You sold us out!
-Elena (in Spanish): Liar!
+Elena : (in Spanish) Liar!
 Daisy: I’m sorry. If someone’s infected, I had to make this call.
 Coulson: I mean no harm. We’re all a part of the same team, but one of us is sick. I didn’t say anything earlier because we didn’t know who it was, but now we do. Let me guess, when you decided to leave, Lincoln didn’t want to go. Not without his prize. This was taken from the Assets room and hidden in your locker.
 Lincoln: I didn’t do that. Daisy, you have to believe me.

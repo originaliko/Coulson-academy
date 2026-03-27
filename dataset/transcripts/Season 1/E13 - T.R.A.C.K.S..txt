@@ -22,11 +22,11 @@ Coulson: May and Ward, you’re front and center. Once we locate the package, yo
 Simmons: And what about the two of us, sir?
 Coulson: Here. Let me get that.
 Simmons: Oh. Thanks, Dad. Who looks far too young to have a daughter my age.
-Ward (in Italian): First class?
-Train Conductor (in Italian): Through here, Sir. Would you like me to show you to your room? It would be my pleasure.
-Ward (in Italian): We’ll find our own way, thank you.
-Train Conductor (in Italian): This one’s a lot of work, no?
-Ward (in Italian): Keeps it interesting.
+Ward : (in Italian) First class?
+Train Conductor : (in Italian) Through here, Sir. Would you like me to show you to your room? It would be my pleasure.
+Ward : (in Italian) We’ll find our own way, thank you.
+Train Conductor : (in Italian) This one’s a lot of work, no?
+Ward : (in Italian) Keeps it interesting.
 Train Conductor: Prego.
 Ward: That looks cozy.
 May: Once I’ve located the package, I’ll let you know where to place the tracker.
@@ -45,8 +45,8 @@ Skye: Just ready for this all to be over. I’m ready to get Quinn.
 Fitz: Me, too. So, are we British or American?
 Skye: Does that matter?
 Fitz: Well, we’re traveling together. We should at least be from the same country. How’s your Scottish accent?
-Skye (in Scottish accent): I don’t know. You tell me how great it is, laddie.
-Fitz (in American accent): American, then. That’s a better idea.
+Skye : (in Scottish accent) I don’t know. You tell me how great it is, laddie.
+Fitz : (in American accent) American, then. That’s a better idea.
 Skye: Oh. That was really good.
 Fitz: I used to watch a lot of American TV growing up. Some of it’s quite good. Lots of nice teeth. 
 Skye: Oh. Here we go. Follow my lead. Excuse me! Do you speak English?
@@ -97,10 +97,10 @@ Coulson: Ward!
 Ward: We’ve been made! Grenade! Coulson, we got to jump!
 Woman: As we round the bend, the passengers on the North side of the train can take in the views of the famous Tre cime di Lavaredo. Isn’t it a wonder?
 Ward: May, got the tracker. Headed to the dining car now to tag the package. May? May?
-Sofia (in Italian): Excuse me, Mr. Conductor. Could you be so kind as to help me with my bag?
-Ward (in Italian): I’m sorry, Miss. I’m very busy. I’ll send someone else to help you.
-Sofia (in Italian): One quick moment. It’s very heavy.
-Ward (in Italian): Certainly Miss.
+Sofia : (in Italian) Excuse me, Mr. Conductor. Could you be so kind as to help me with my bag?
+Ward : (in Italian) I’m sorry, Miss. I’m very busy. I’ll send someone else to help you.
+Sofia : (in Italian) One quick moment. It’s very heavy.
+Ward : (in Italian) Certainly Miss.
 Ward: Cybertek knew we were here. Anyone copy? Damn it.
 Ward: We’ve been made. Comms are down. Where’s Coulson?
 Simmons: He went to the dining car to find the package. You’ve been hurt. Let me take a look.

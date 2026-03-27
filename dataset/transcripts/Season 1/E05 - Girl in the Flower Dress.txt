@@ -1,7 +1,7 @@
-Chan (in Cantonese): My grandfather often said that every man is a mystery. Some men harbor beautiful secrets. Others hide darker ones. He believed the only way to know a man’s true nature is to pierce his outer shell. And gaze within.
-Man (in Cantonese): Lame trick.
-Woman (in Cantonese): They were in the egg.
-Chan(in Cantonese): This is not a trick.
+Chan : (in Cantonese) My grandfather often said that every man is a mystery. Some men harbor beautiful secrets. Others hide darker ones. He believed the only way to know a man’s true nature is to pierce his outer shell. And gaze within.
+Man : (in Cantonese) Lame trick.
+Woman : (in Cantonese) They were in the egg.
+Chan: (in Cantonese) This is not a trick.
 Raina: How did you do that?
 Chan: A magician never reveals his secrets.
 Raina: Then I’ll have to pierce your shell and gaze within?
@@ -73,8 +73,8 @@ Ward: Though, in rare cases, S.H.I.E.L.D. has had to take action.
 Skye: Action against objects or people? Well, that’s drastic with a side of creepy. How are they monitored… Tapped phones, satellite surveillance, body probes in dark, unpleasant places?
 Fitz: Body probes? Now, that’s ridiculous. S.H.I.E.L.D. doesn’t do that. We don’t do that. Do we?
 Coulson: The methods vary. Mr. Chan was low-risk. He was assigned a case agent who checked in with him every few days. That’s how we discovered him missing.
-May (in Cantonese): Hello, Agent Kwan. How are you?
-Kwan (in Cantonese): Not as good as I could be.
+May : (in Cantonese) Hello, Agent Kwan. How are you?
+Kwan : (in Cantonese) Not as good as I could be.
 May: Everyone, this is agent Kwan, Chan Ho Yin’s case agent. What can you tell us?
 Kwan: Not much, I’m afraid. Chan is a magician, so at first, I thought he’d made himself disappeared.
 Coulson: The file says you’d caught him violating his Index agreement before.
@@ -306,10 +306,10 @@ Ward: Coulson’s in trouble.
 Chan: Aaaah!
 Coulson : Mr. Chan, I know you’re in pain.
 Chan: This is nothing. You were the ones killing me, forcing me to keep this gift locked up inside.
-May (in Cantonese): Chan, I’m sorry you lived a life you didn’t want, but violence will solve nothing.
-Chan (in Cantonese): It will keep me from being kept a prisoner. By you, by them, there’s no difference. I was given this gift for a reason. To burn bright.
-May (in Cantonese): There’s no turning back.
-Chan (in Cantonese): I don’t want to go back!
+May : (in Cantonese) Chan, I’m sorry you lived a life you didn’t want, but violence will solve nothing.
+Chan : (in Cantonese) It will keep me from being kept a prisoner. By you, by them, there’s no difference. I was given this gift for a reason. To burn bright.
+May : (in Cantonese) There’s no turning back.
+Chan : (in Cantonese) I don’t want to go back!
 Coulson: So we’re good, right?
 Skye: The entire facility’s been locked down.
 Fitz: Are you sure about this

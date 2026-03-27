@@ -184,7 +184,7 @@ Simmons: … we can send a message to Fitz back on Earth.
 Daisy: Okay, okay, so if I can find a layout, find a ship, find May, it’s a start. This interface looks similar to… Coulson, do you recognize this language?
 Coulson: No. I don’t think humans are running this place after all.
 Daisy: Mack? Yo-Yo?
-Kree (in Kree): We’ll leave these transgressors to the floor chief? To use as he needs. He should be interested that they’ve removed their Metrics.
+Kree : (in Kree) We’ll leave these transgressors to the floor chief? To use as he needs. He should be interested that they’ve removed their Metrics.
 Daisy: Hey. What are you gonna do with our friends?
 Kree: Whatever we want. Experiment. They knew the rule, and they broke it.
 Daisy: They’re not gonna make it easy for you.
@@ -195,7 +195,7 @@ Mack: You speak English?
 Kree: Of course.
 Mack: Let her go. She didn’t do anything.
 Kree: I said we speak English. That doesn’t mean I want to hear it.
-Mack (in Spanish): How do you think Papa Smurf here feels about a little Espanõl?
+Mack : (in Spanish) How do you think Papa Smurf here feels about a little Espanõl?
 Coulson: Okay. New theory.
 Simmons: The Kree have been abducting humans to this outpost for years.
 Daisy: Running experiments?
@@ -212,11 +212,11 @@ Deke: Guys, what did I say about trusting Virgil, huh? We went over this. What d
 Simmons: Don’t trust Virgil.
 Daisy: Not to trust him.
 Deke: God, you repeated it back to me, and we said back, it was like a pass-and-catch thing. Look, I really appreciate your help with these guys, but I can take them off your hands, and then I’ll slip you a few extra tokens for your trouble. Listen, I’ll be… I’ll be honest with you, man to more than a man. If I can’t get these guys back to processing at warp speed, I am gonna be in some pretty hot water. So I know it’s not ideal, but… Look, if you… if you come by the gallery for an hour or two, I’ll make it worth your while, all right? All good, gang. So, single file.
-Mack (in Spanish): Feel free to wiggle out of those restraints any time now, darling.
-Elena (in Spanish): Shut-up. Stop provoking them. But your Spanish is so much better.
-Mack (in Spanish): Spanish was mandatory at Hope’s school.
-Kree (in Kree): He’s holding up well for a human. He might be well fitted for fighting in the Crater. He’s a good size. He could make a nnice gift for Kasius?
-Kree 2 (in Kree): That could earn us some points. Good thinking. (in English) We’ll spare you to provide us greater satisfaction than killing you would bring. She’ll pay that price for you.
+Mack : (in Spanish) Feel free to wiggle out of those restraints any time now, darling.
+Elena : (in Spanish) Shut-up. Stop provoking them. But your Spanish is so much better.
+Mack : (in Spanish) Spanish was mandatory at Hope’s school.
+Kree : (in Kree) He’s holding up well for a human. He might be well fitted for fighting in the Crater. He’s a good size. He could make a nnice gift for Kasius?
+Kree 2 : (in Kree) That could earn us some points. Good thinking. (in English) We’ll spare you to provide us greater satisfaction than killing you would bring. She’ll pay that price for you.
 Mack: Stop! Stop! No! No!
 Coulson: You good?
 May: Banged up but okay. We in space?
@@ -248,7 +248,7 @@ Simmons: Too many. Think about it. The Kree have been studying humans for years,
 May: Kree who were bred to kill.
 Simmons: Bred to kill and living within striking distance of Earth. This isn’t an outpost, May.
 May: It’s a staging ground. They’re planning an invasion.
-Kree (in Kree): At some point her arms should just snap off.
+Kree : (in Kree) At some point her arms should just snap off.
 Coulson: What do you mean “submission?” Are the Kree planning some sort of attack?
 Deke: Attack on whom exactly?
 Coulson: Humans.

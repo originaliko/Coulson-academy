@@ -1,6 +1,6 @@
-Bruno (in Portugese): I don’t understand. Why would you want to put hot marshmallows inside of crackers?
-Tiago (in Portugese): It’s a cookie. Cracker is the American word for cookie.
-Bruno (in Portugese): Hey. What’s this?
+Bruno : (in Portugese) I don’t understand. Why would you want to put hot marshmallows inside of crackers?
+Tiago : (in Portugese) It’s a cookie. Cracker is the American word for cookie.
+Bruno : (in Portugese) Hey. What’s this?
 Lady Sif: Kava. I must find Kava.
 Tiago: Sorry. I don’t know who that is. Do you guys?
 Bruno: Hey. A pretty lady like you shouldn’t be out here all alone. I can help you find Kava. I can help you with anything else that you need.
@@ -68,7 +68,7 @@ May: This guy can hold his own against you. Impressive.
 Coulson: Last time you were here, you came to collect a rogue Asgardian. That would explain his strength.
 May: Regardless, she traveled across the universe to find him. He’s dangerous.
 Coulson: Make that more than dangerous. We know you were after him. Question is, what’s he after?
-Nurse (in Portugese): Hello, how may I help you?
+Nurse : (in Portugese) Hello, how may I help you?
 Vin-Tak: Take me to your supplies, powering elements… fuel! Do not try and fight me. Someone on your world has changed. I am here to hunt them down.
 Nurse: What do you… What do you want from me?
 Vin-Tak: Don’t worry. You won’t remember.
@@ -121,7 +121,7 @@ Simmons: Yes, Fitz.
 Fitz: We’re uploading some information to you. Whatever came out of that guy’s chest… [beeping] … I’m guessing it wasn’t blood.
 Simmons: I’ll give it a look. See?
 Hunter: Who doesn’t like a good mystery?
-Morse (in Portugese): Would you please find someone who speaks English? My Portugese is awful. Thank you so much.
+Morse : (in Portugese) Would you please find someone who speaks English? My Portugese is awful. Thank you so much.
 Skye: You speak Portuguese?
 Morse: I’m no expert. It’s a pretty language. It’s hard to gauge if someone’s lying.
 Skye: Are you an expert at that?
@@ -131,9 +131,9 @@ Head Nurse: Can I help you?
 Morse: Hi, yes, we’re looking for anyone who may have been injured in the incident at the pier or may have seen this man.
 Head Nurse: Hmm. No, he does not look familiar to me. As far as the injuries, I can ask around. The nurse who was working earlier took ill. So we are short-staffed. It may take a while.
 Skye: Okay. Well, we’ll be here.
-Nurse (in Portugese): You keep calling me that. Is it my name?
+Nurse : (in Portugese) You keep calling me that. Is it my name?
 Morse: Wait. Is that woman all right? What happened to her?
-Nurse (in Portugese): Why can’t I remember my own name?
+Nurse : (in Portugese) Why can’t I remember my own name?
 Lady Sif: Yet you do not serve a king?
 May: Not really how it works with us.
 Lady Sif: I wonder if I serve the king as the great warrior you say I am.

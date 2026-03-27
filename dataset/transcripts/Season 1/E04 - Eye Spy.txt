@@ -26,7 +26,7 @@ Skye: Should I be offended?
 Coulson: Somebody’s stealing millions of dollars in diamonds. They’ve found a way to crack the security systems. I want you to figure out their exploit.
 Skye: Hmmm.
 Coulson: Yesterday, 55 men, all military, were hired by one of the largest gem brokers in the world. They dressed the men in identical outfits, gave each one a randomly assigned briefcase, and sent them along 25 different routes here in Stockholm. No one knew which briefcase contained the diamonds, but they were still stolen.
-Coulson (in Swedish): Thanks.
+Coulson : (in Swedish) Thanks.
 May: Why the Kabuki theater?
 Coulson: They were afraid because somebody’s targeting diamonds… an armored car in Milan, a safe in Monte Carlo, and now this… over $30 mil total. Each theft occurred despite heavy security.
 May: They sound like inside jobs.
@@ -115,7 +115,7 @@ Ward: Agent Coulson and I are trying to find a dangerous criminal. If there’s 
 Skye: Well, one second, Fitz wants to know if you packed any snacks.
 Fitz: Yeah, I’m feeling a bit peckish.
 Skye: Hello? He… he hung up.
-Coulson (in Russian): Good day.
+Coulson : (in Russian) Good day.
 Receptionist: Good afternoon.
 Coulson: I’m Agent Coulson. This is Agent Ward. We’re looking for this young woman.
 Receptionist: Oh, she’s my angel.
@@ -265,10 +265,10 @@ Ward: That was before they asked me to go all Mata Hari on this guy. I’m just 
 Skye: Ward, wait. We may need them to get through the next door. Remember, it said seduce, not kill.
 Ward: I don’t think I’m his type.
 Skye: Let me see. Cheap haircut. 5:00 shadow. Nope. Odds are you guys play for the same team. You’re gonna have to bromance him. Talk sports, Vodka, the Victorianov secret catalog. Be friendly, Agent Ward. Can you be friendly?  Please don’t die.
-Guard (in Russian): Show me your identification.
-Ward (in Russian): How about that game last night?
-Guard (in Russian): Your I.D.?
-Ward (in Russian): I think I left it at home. Had a wild night. Met these two Ukrainian girls… didn’t sleep much. You know how it is, right? Yeah? Yeah?
+Guard : (in Russian) Show me your identification.
+Ward : (in Russian) How about that game last night?
+Guard : (in Russian) Your I.D.?
+Ward : (in Russian) I think I left it at home. Had a wild night. Met these two Ukrainian girls… didn’t sleep much. You know how it is, right? Yeah? Yeah?
 Ward: Guess not.
 Skye: What now? Are you supposed to grab one of these guys?
 May: They just sent another message. Coulson, he’s close, only a few blocks from you. He’s somewhere in Victory Square. One more message should lock in his precise location.

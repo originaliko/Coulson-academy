@@ -26,9 +26,9 @@ Davis: Nome, Alaska.
 Mack: Coulson.
 Coulson: What the hell is this?
 Daisy: It’s you.
-Ivanov (in Russian): How much longer?
-Man (in Russian): We will be ready soon, Superior.
-Ivanov (in Russian): Good.
+Ivanov : (in Russian) How much longer?
+Man : (in Russian) We will be ready soon, Superior.
+Ivanov : (in Russian) Good.
 Ivanov: Doctor. Radcliffe.
 AIDA: Unless your intention is to shred the most advanced human mind of this or any century, I suggest you think twice before forcefully removing him from the Framework.
 Ivanov: And unless you would like to lose your arm, I suggest you let me go. I need to speak with him.
@@ -48,11 +48,11 @@ Daisy: Your life and his.
 Coulson: Huh?
 Daisy: You see the mining facility in this picture? He owns it. Purchased by Anton Ivanov this year. It’s the only thing here that ties back to him. Does it tie back to you, too?
 Coulson: Yeah.
-Soldier (in Russian): Identify yourself.
-Coulson (in Russian): I am to come from the UN for take the item found up four premises.
-Soldier (in Russian): UN? I was not informed they were sending a taskforce.
-Coulson (in Russian): Most secrets. It is for the protection of all your cats. I assure you.
-Soldier (in Russian): I’m going to have to call this in.
+Soldier : (in Russian) Identify yourself.
+Coulson : (in Russian) I am to come from the UN for take the item found up four premises.
+Soldier : (in Russian) UN? I was not informed they were sending a taskforce.
+Coulson : (in Russian) Most secrets. It is for the protection of all your cats. I assure you.
+Soldier : (in Russian) I’m going to have to call this in.
 May: If that guy doesn’t have a cat, he’d be really confused.
 Coulson: May, what the hell are you doing here? I didn’t request a specialist.
 May: I go where I’m assigned.
@@ -192,7 +192,7 @@ Coulson: It’s our greatest flaw.
 Soldier: Our unit has been made aware that an item was found on the premises. We have been sent to retrieve it.
 Coulson: Okay.
 Soldier: At any cost.
-Soldier (in Russian): It’s not here.
+Soldier : (in Russian) It’s not here.
 Soldier: Looks like your partner was asked to retrieve the item at any cost, as well. And the cost was you.
 Daisy: Okay, so we think we found the next clue in this fun, little game. Ivanov mentioned his SVR unit being tortured and executed and that he was gonna do the exact same thing to us. So I looked up SVR detention centers connected to the unit number found on the dead agents’ uniforms. And this one right here was a front during the Cold War for a submarine base.
 Mack: And since we know Ivanov has a submarine, like all good Bond villains…

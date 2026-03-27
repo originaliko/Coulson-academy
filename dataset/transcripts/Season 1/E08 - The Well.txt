@@ -88,7 +88,7 @@ Simmons: Excuse me?
 Skye: Really?
 Coulson: When we first found the hammer in New Mexico, I consulted one of the world’s leading experts on Norse mythology, Elliot Randolph, a Professor at a university in Seville. We’ll leave immediately. Maybe he can tell us more about these markings.
 Randolph: Well, one must adapt, Elena. Recent events have thrown us all for a loop. I thought I was teaching Norse mythology. No, turns out I’m a history Professor.
-Elena (student): So, you’re not going to change my grade?
+Elena #1: So, you’re not going to change my grade?
 Randolph: No. I will give you a week to rewrite it. I think, in general, little more history, less lit crit. But I do hope we’re still on for dinner tonight. I’ve included a list of books there that might help you. I’ll see you later.
 Coulson: Professor Randolph.
 Randolph: Agent Coulson. Come in, come in.

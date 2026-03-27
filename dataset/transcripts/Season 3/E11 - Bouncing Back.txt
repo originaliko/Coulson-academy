@@ -1,9 +1,9 @@
-Man 1 (in Spanish): Everyone stay put until the threat is assessed.
-Woman (in Spanish): What’s going on?
-Man 2 (in Spanish): They want the guns.
-Woman (in Spanish): OUr vehicle is under attack!
-Man 1 (in Spanish): You’re outnumbered. Come out with your hands up.
-Man (in Spanish): Take cover!
+Man 1 : (in Spanish) Everyone stay put until the threat is assessed.
+Woman : (in Spanish) What’s going on?
+Man 2 : (in Spanish) They want the guns.
+Woman : (in Spanish) OUr vehicle is under attack!
+Man 1 : (in Spanish) You’re outnumbered. Come out with your hands up.
+Man : (in Spanish) Take cover!
 May: This can’t be easy.
 Coulson: It’s fine.
 May: Can I ask, why here?
@@ -14,8 +14,8 @@ President: Director Coulson. Thank you for meeting me. Long overdue. Rosalind sp
 Coulson: I assume we’re not here to share memories of a fallen friend.
 President: This… this problem… Rosalind said you called them Inhumans? Heads of state calling, not sure what’s happening. Watchdog agencies hurling accusations. Fox News won’t shut up. I don’t need to tell you how delicate the situation is, but we have to do something.
 Coulson: With all due respect, Mr. President, we are doing something.
-Joey (in Spanish): We’ve been notified that the alien contagion may have spread here, that there’s been a recent incident.
-Man (in Spanish): I’ll get my supervisor.
+Joey : (in Spanish) We’ve been notified that the alien contagion may have spread here, that there’s been a recent incident.
+Man : (in Spanish) I’ll get my supervisor.
 Daisy: You’re doing good.
 Joey: I’m not great at projecting authority. It’s nice to talk Spanish, though. Reminds me of home.
 Daisy: Do you miss it?
@@ -95,10 +95,10 @@ Fitz: Lincoln? Smart. Obviously most helpful in helping us, Jemma, Understand In
 Coulson: You did what you had to do. We both did. Sometimes there’s no choice but the hard choice. That’s the job. Now set up the machine.
 Fitz: Sir, you’re not really think…
 Coulson: It’s not for me. There’s one person who might have information about Gideon Malick. I need to get into his head.
-Elena (in Spanish): Now don’t hesitate. We get rid of the problem today.
-Francisco (in Spanish): You should be there.
-Elena (in Spanish): I’ll deal with the complication in the bathroom. Call me when it’s done.
-Elena (in Spanish): Why are you in Bogotá?
+Elena : (in Spanish) Now don’t hesitate. We get rid of the problem today.
+Francisco : (in Spanish) You should be there.
+Elena : (in Spanish) I’ll deal with the complication in the bathroom. Call me when it’s done.
+Elena : (in Spanish) Why are you in Bogotá?
 Mack: Been waiting for you to come back.
 Mack: So you snap back to the same spot like a yo-yo. Good to know. How about you let me… Aah! Damn it! I’m starting to hate you.
 Simmons: Von Strucker’s in a persistent vegetative state. Significant portions of his brain are damaged. Sir, I’m not sure what you want to do is even possible.
@@ -112,19 +112,19 @@ Malick: He spoke?
 Malick: How can I help you? What do you need?
 Hive: I’m hungry.
 Mack: Chair’s an upgrade. Least there’s that.
-Elena (in Spanish): I don’t know what you’re saying.
+Elena : (in Spanish) I don’t know what you’re saying.
 Mack: Yeah, again, I don’t know what you’re saying.
-Elena (in Spanish): Are you U.S. military? I know you’re not with the local police.
+Elena : (in Spanish) Are you U.S. military? I know you’re not with the local police.
 Mack: Policía? Yeah. You stole pistolas from the policia and sold the pistolas to your amigos, criminals.
-Elena (in Spanish): Me? I’m the criminal?
+Elena : (in Spanish) Me? I’m the criminal?
 Mack: Yeah, you. Whoosh, whoosh. Criminal.
-Elena (in Spanish): I wouldn’t do that. I wouldn’t use my gifts to commit a sin. They’re a gift from God.
+Elena : (in Spanish) I wouldn’t do that. I wouldn’t use my gifts to commit a sin. They’re a gift from God.
 Mack: Dios? You think God did this?
 Elena: Sí. Dios.
 Mack: You think it was a gift from Dios or pescado?
 Elena: Pescado?
 Mack: Yeah, fish. I know my way around a menu.
-Elena (in Spanish): That’s what I was eating for dinner when… whateever that was, happened. It felt like rock crawling on my body… Suffocating me in it.
+Elena : (in Spanish) That’s what I was eating for dinner when… whateever that was, happened. It felt like rock crawling on my body… Suffocating me in it.
 Mack: I think you’re talking about Terrigenesis.
 Elena: Terrigenesis?
 Mack: Yeah. You’re an alien. My partner’s one, too. You’ll see her soon enough.
@@ -191,23 +191,23 @@ Coulson: Tell me how.
 Strucker: Dad said only as a last resort. Perizad sent me. We went to Princeton together.
 Strucker: No. I was afraid. I didn’t have anywhere else to turn. I didn’t know where else to turn.
 Coulson: And now we do.
-Joey (in Spanish): We’re trying to protect you from the world.
-Elena (in Spanish): Didn’t ask for your help. Don’t need it.
-Joey (in Spanish): Well, in this case, we’re defending the world from you.
-Elena (in Spanish): I knew it. You’re wirking with them.
+Joey : (in Spanish) We’re trying to protect you from the world.
+Elena : (in Spanish) Didn’t ask for your help. Don’t need it.
+Joey : (in Spanish) Well, in this case, we’re defending the world from you.
+Elena : (in Spanish) I knew it. You’re wirking with them.
 Mack: Tell her S.H.I.E.L.D. isn’t really with anyone. We’re sort of our own thing.
 Mack: She said her powers were a gift from God.
-Elena (in Spanish): Yes. To finally do something. To end injustice, instead of accepting the way things have always been.
+Elena : (in Spanish) Yes. To finally do something. To end injustice, instead of accepting the way things have always been.
 Daisy: I think we were wrong about her.
 Mack: Ask her about the convoy. Why’d she take those weapons?
-Joey (in Spanish): The weapons you stole, what are you going to use them for?
-Elena (in Spanish): We are not going to use them.
-Morse (in Spanish): Don’t move!
-Elena (in Spanish): We’re making sure no one uses them.
+Joey : (in Spanish) The weapons you stole, what are you going to use them for?
+Elena : (in Spanish) We are not going to use them.
+Morse : (in Spanish) Don’t move!
+Elena : (in Spanish) We’re making sure no one uses them.
 Daisy: But they belong to the police.
-Elena (in Spanish): Know what we call the police here?
+Elena : (in Spanish) Know what we call the police here?
 Joey: Thieves in uniform.
-Elena (in Spanish): They are only powerful because they have guns. Now I have actual power. To protect my friends from being arrested… killed in the streets. And you want to take it away.
+Elena : (in Spanish) They are only powerful because they have guns. Now I have actual power. To protect my friends from being arrested… killed in the streets. And you want to take it away.
 Morse: Found him. He was dumping weapons into the river.
 Daisy: She’s telling the truth.
 Morse: We’ve got visitors. Local law enforcement.
@@ -217,9 +217,9 @@ Ramon: What’s going on here?
 Morse: We’ve got this. World Health Organization jurisdiction.
 Ramon: You don’t really expect me to just drive away, do you?
 Morse: Guess not. It would’ve been easier if you had.
-Ramon (in Spanish): Bring them to the station. Let’s figure out who they’re working for.
-Lucio (in Spanish): And him?
-Ramon (in Spanish): We’ll use him to send a message.
+Ramon : (in Spanish) Bring them to the station. Let’s figure out who they’re working for.
+Lucio : (in Spanish) And him?
+Ramon : (in Spanish) We’ll use him to send a message.
 Daisy: Hunter and Bobbi were gone by the time we got there.
 Mack: Elena’s cousin. The police just left him there.
 Daisy: I need to tell Coulson what’s going on.
@@ -235,7 +235,7 @@ Morse: Yeah. Pain means it’s wearing off.
 Hunter: Ugh. Bloody powers.
 Ramon: Good afternoon, beautiful. I need you to answer questions. His fate depends on your answers. Why are you really here?
 Mack: Uh, Joey’s here to, um… Here’s the thing. It’s not something I talk about, but like you, I rely on my faith. And somehow, I never made the connection till you said it, but… maybe these powers, these gifts that you have, that Daisy has, maybe they’re not random. Maybe it’s part of a plan.
-Elena (in Spanish): I believe I have a duty, to use these gifts, to do better.
+Elena : (in Spanish) I believe I have a duty, to use these gifts, to do better.
 Joey: She believes she’s meant to do good with these gifts.
 Mack: We believe the same thing. We need to help each other, to stop them.
 Joey: She’s in.
@@ -269,14 +269,14 @@ Malick: It’ll cost me millions, to be sure. I’ll have to shut down a few off
 Daisy: We’ll configure the module to hold him, and get Bobbi, Elena, and Hunter to medical.
 Joey: What is that?
 Mack: HYDRA.
-Elena (in Spanish): I’m not going anywhere.
-Joey (in Spanish): You’ll learn how to use your powers.
-Elena (in Spanish): I already figured that out.
-Joey (in Spanish): Things are different now. You are an Inhuman.
-Elena (in Spanish): I’m also Colombian. And an office manager and a daughter and a cousin… I have to take my cousin home. I have to tell my aunt why he died.
+Elena : (in Spanish) I’m not going anywhere.
+Joey : (in Spanish) You’ll learn how to use your powers.
+Elena : (in Spanish) I already figured that out.
+Joey : (in Spanish) Things are different now. You are an Inhuman.
+Elena : (in Spanish) I’m also Colombian. And an office manager and a daughter and a cousin… I have to take my cousin home. I have to tell my aunt why he died.
 Daisy: She’s not wrong.
-Joey (in Spanish): I know it’s hard… but you’ll do good with S.H.I.E.L.D.
-Elena (in Spanish): I’m doing good. Close to home.
+Joey : (in Spanish) I know it’s hard… but you’ll do good with S.H.I.E.L.D.
+Elena : (in Spanish) I’m doing good. Close to home.
 Mack: She’s a perfect fit for this team you’re trying to build.
 Daisy: Except for the pesky little fact she doesn’t want any part of it.
 Mack: Look, she’s also vulnerable out there. Might be a good thing, keeping her close. It’s safer. Don’t look at me like that.

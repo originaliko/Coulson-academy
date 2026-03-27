@@ -154,12 +154,12 @@ Fitz: A hali… They’ve gone all ghostly.
 Mack: Smart.
 Fitz: Yeah. Well, they are scientists. They tend to think strategically in these situations. That’s what makes us such formidable adversaries.
 Mack: At least they haven’t infected the prisoners.
-Robbie (in Spanish): You Fifth Street?
-Noguera (in Spanish): You must be from the hood. Hardly anyone remembers the Fifth Street Locos.
-Robbie (in Spanish): I do.
-Noguera (in Spanish): Well, you’re in my hoood now, homie.
+Robbie : (in Spanish) You Fifth Street?
+Noguera : (in Spanish) You must be from the hood. Hardly anyone remembers the Fifth Street Locos.
+Robbie : (in Spanish) I do.
+Noguera : (in Spanish) Well, you’re in my hoood now, homie.
 Mack: This is not the objective.
-Noguera (in Spanish): Go on, sweetie. (in English) Come back any time, G.
+Noguera : (in Spanish) Go on, sweetie. (in English) Come back any time, G.
 Mack: I didn’t bring you down here to settle scores.
 Robbie: I’m good.
 Mack: Really? ‘Cause I don’t think you can control that thing inside of you. And if I have to shoot you to keep him from coming out… I will.
@@ -302,19 +302,19 @@ Morrow: Hey! Come on. Hey. Robbie.
 Robbie: Just keep going. S.H.I.E.L.D. will meet you out in the yard.
 Morrow: What about you?
 Robbie: I got one last thing to take care of. Go. I’m right behind you! Go!
-Robbie (in Spanish): Thought you’d be out there, homie.
-Noguera (in Spanish): Nah. Brawling’s for the young pups. I’m reformed, man.
-Robbie (in Spanish): Reformed from what? Ordering drive-bys on a couple of kids. A few years back. Two brothers, just kids, were cruising around the neighborhood. Fifth Street Locos rolled up, sprayed them with bullets, lit the car on fire and left them to die.
-Noguera (in Spanish): Yeah, I remember that. I also heard those boys lived, right?
-Robbie (in Spanish): And one of them will never walk.
-Noguera (in Spanish): So what? I was in here. Locked up! I wasn’t the one who took that job.
-Robbie (in Spanish): Job? You saying it was a hit?
-Noguera (in Spanish): Yeah. So if you knew those kids, your quarrel ain’t with me.
-Robbie (in Spanish): Who ordered it? Who?
-Noguera (in Spanish): My boys never told me and never will because after that day every one of them ended up dead. Every single member of Fifth Street burned.
+Robbie : (in Spanish) Thought you’d be out there, homie.
+Noguera : (in Spanish) Nah. Brawling’s for the young pups. I’m reformed, man.
+Robbie : (in Spanish) Reformed from what? Ordering drive-bys on a couple of kids. A few years back. Two brothers, just kids, were cruising around the neighborhood. Fifth Street Locos rolled up, sprayed them with bullets, lit the car on fire and left them to die.
+Noguera : (in Spanish) Yeah, I remember that. I also heard those boys lived, right?
+Robbie : (in Spanish) And one of them will never walk.
+Noguera : (in Spanish) So what? I was in here. Locked up! I wasn’t the one who took that job.
+Robbie : (in Spanish) Job? You saying it was a hit?
+Noguera : (in Spanish) Yeah. So if you knew those kids, your quarrel ain’t with me.
+Robbie : (in Spanish) Who ordered it? Who?
+Noguera : (in Spanish) My boys never told me and never will because after that day every one of them ended up dead. Every single member of Fifth Street burned.
 Robbie: No. (in Spanish) There’s still one left.
-Noguera (in Spanish): Easy, man. You don’t want to do this.
-Robbie (in Spanish): Yes, I do.
+Noguera : (in Spanish) Easy, man. You don’t want to do this.
+Robbie : (in Spanish) Yes, I do.
 Noguera: No. (in Spanish) Oh my god! No!
 Mack: They’ll get you set up, lead you back inside.
 Coulson: Where’s Eli Morrow?
