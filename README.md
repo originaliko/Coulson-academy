@@ -22,6 +22,7 @@ An interactive data visualisation site for Marvel's *Agents of S.H.I.E.L.D.* (7 
 ## Data sources
 
 - Transcript data: [seasons 1–5](https://github.com/charlottegeo/shield-transcripts)
+- Transcripts: [Season 6-7](https://marvelsaos.tumblr.com/transcript)
 - Episode ratings: IMDb via TMDB
 - Inspired by: [Friends Viz](https://sheets.works/data-viz/friends)
 
