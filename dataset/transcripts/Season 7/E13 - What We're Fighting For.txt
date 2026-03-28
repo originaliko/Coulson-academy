@@ -152,7 +152,7 @@ Mack: But first, you need to put these on. We’ll arrive just before we left. S
 May: The Hunters are gonna be scanning for us everywhere.
 Coulson: Hang tight. We gotta wait for our moment.
 Sibyl: Zephyr One is out there somewhere.
-Hunter: We are not seeing any…
+Pilot: We are not seeing any…
 Sibyl: Find it. Destroy it.
 Enoch: Good. They sent reinforcements.
 Simmons: Thank you for coming. We must move quickly and calmly.
@@ -163,7 +163,7 @@ Deke: Where’s Fitz?
 Simmons: I don’t know. I can’t know.
 Coulson: Wait for it. Wait for it.
 May: You don’t need to keep saying it.
-Hunter: Zephyr One spotted moving on the surface of the Earth.
+Pilot: Zephyr One spotted moving on the surface of the Earth.
 Sibyl: Fire!
 Coulson: Now!
 Piper: Be ready.
@@ -171,7 +171,7 @@ Mack: Quinjet team, head back to the Lighthouse.
 Elena: On our way.
 Mack: That’s some serious flying there.
 May: That used to be all I did.
-Hunter: No sign of Zephyr One. It looks as though it’s been destroyed.
+Pilot: No sign of Zephyr One. It looks as though it’s been destroyed.
 Sibyl: I don’t believe it. No matter the percentages, these people always beat the odds.
 Mack: They definitely heard that.
 Daisy: Remember, these things are radioactive, so be careful.
