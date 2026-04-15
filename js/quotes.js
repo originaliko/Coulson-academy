@@ -37,7 +37,16 @@ export function initQuotes(stats) {
 
   fetch('data/quotes.json')
     .then(r => r.json())
-    .then(data => { scenes = data; playNextScene(); })
+    .then(data => {
+      scenes = data;
+      const hash = window.location.hash.slice(1);
+      const hashIdx = hash ? scenes.findIndex(s => s.id === hash) : -1;
+      if (hashIdx !== -1) {
+        startScene(hashIdx);
+      } else {
+        playNextScene();
+      }
+    })
     .catch(() => {}); // fail silently
 
   const FADE_DURATION = 600; // ms, must match CSS animation
@@ -54,7 +63,7 @@ export function initQuotes(stats) {
     }
   }
 
-  function startScene() {
+  function startScene(forcedIdx) {
     slotLeft.classList.remove('qs-fading');
     slotRight.classList.remove('qs-fading');
     slotLeft.innerHTML  = '';
@@ -62,7 +71,11 @@ export function initQuotes(stats) {
     lastSpeaker = null;
     side = 'right';
     let idx;
-    do { idx = Math.floor(Math.random() * scenes.length); } while (scenes.length > 1 && idx === lastSceneIdx);
+    if (forcedIdx !== undefined) {
+      idx = forcedIdx;
+    } else {
+      do { idx = Math.floor(Math.random() * scenes.length); } while (scenes.length > 1 && idx === lastSceneIdx);
+    }
     lastSceneIdx = idx;
     playLine(scenes[idx].lines, 0);
   }
